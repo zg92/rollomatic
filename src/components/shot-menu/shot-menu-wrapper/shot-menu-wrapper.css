@@ -1,0 +1,24 @@
+.menu-line-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.shot-menu-wrapper{
+    width: 80%;
+    height: 50px;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.line-data-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+}
+
+.add-remove-menu {
+    display: flex;
+    flex-direction: row;
+}

@@ -1,0 +1,14 @@
+.dropdown-wrapper {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+}
+
+.dropdown-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100px;
+    padding: 5px;
+}

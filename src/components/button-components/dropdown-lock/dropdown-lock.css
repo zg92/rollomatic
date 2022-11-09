@@ -1,0 +1,23 @@
+.dropdown-lock-wrapper {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-lock-icon {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+}
+
+.dropdown-lock-icon:hover {
+    cursor:pointer;
+    background: green;
+    
+}

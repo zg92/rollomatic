@@ -1,0 +1,26 @@
+.dropdown-list-wrapper {
+    height: 100px;
+    z-index: 0;
+}
+
+.dropdown-list {
+    background: white;
+    width: 80px;
+    list-style-type:none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.dropdown-list-item {
+    width: 100%;
+    height: fit-content;
+}
+
+.dropdown-list-item:hover {
+    cursor: pointer;
+    background: rgb(127, 127, 128);
+    
+}
