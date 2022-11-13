@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
-import { ShotMenuContext } from '../../../context/shot-menu.context'
-import DropdownAdd from '../../button-components/dropdown-add/dropdown-add'
-import DropdownLock from '../../button-components/dropdown-lock/dropdown-lock'
-import DropdownRemove from '../../button-components/dropdown-remove/dropdown-remove'
+import { ShotMenuContext } from '../../../../context/shot-menu.context'
+import DropdownAdd from '../../../button-components/dropdown-add/dropdown-add'
+import DropdownLock from '../../../button-components/dropdown-lock/dropdown-lock'
+import DropdownRemove from '../../../button-components/dropdown-remove/dropdown-remove'
 import ShotMenuDropdownWrapper from '../shot-menu-dropdown-wrapper/shot-menu-dropdown-wrapper'
 import './shot-menu-wrapper.css'
 

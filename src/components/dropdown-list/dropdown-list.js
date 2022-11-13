@@ -4,7 +4,7 @@ import './dropdown-list.css'
 
 const DropdownList = ({ dropdownType, position }) => {
 
-  const { photoLineItemArray, setPhotoLineItemArray, setOpenMenu } = useContext(ShotMenuContext)
+  const { shotsList, setShotsList, setOpenShotSettingMenu } = useContext(ShotMenuContext)
 
   const listData = {
     'aperture': ['f/2.8', 'f/4', 'f/5.6', 'f/8', 'f/11', 'f/16', 'f/22'],
@@ -15,14 +15,14 @@ const DropdownList = ({ dropdownType, position }) => {
     if (arrayCopy[position]['aperture'] !== null
     && arrayCopy[position]['shutterspeed'] !== null) 
     {
-    setOpenMenu({'position':null})
+    setOpenShotSettingMenu({'position':null})
   }
   }
 
   const setData = async (listItem) => {
-    const arrayCopy = [...photoLineItemArray]
-    arrayCopy[position] = { ...photoLineItemArray[position], [dropdownType]: listItem }
-    await setPhotoLineItemArray(arrayCopy)
+    const arrayCopy = [...shotsList]
+    arrayCopy[position] = { ...shotsList[position], [dropdownType]: listItem }
+    await setShotsList(arrayCopy)
     closeMenu(arrayCopy)
   }
 

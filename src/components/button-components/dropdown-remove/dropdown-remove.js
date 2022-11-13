@@ -6,12 +6,12 @@ import './dropdown-remove.css'
 
 const DropdownRemove = () => {
 
-  const { photoLineItemArray, setPhotoLineItemArray } = useContext(ShotMenuContext)
+  const { shotsList, setShotsList } = useContext(ShotMenuContext)
 
   const removeRow = async () => {
-    const arrayCopy = [...photoLineItemArray]
+    const arrayCopy = [...shotsList]
     arrayCopy[arrayCopy.length - 2] = {...arrayCopy[arrayCopy.length-2], 'lock':false}
-    setPhotoLineItemArray(arrayCopy.filter(item => item.position !== photoLineItemArray.length - 1))
+    setShotsList(arrayCopy.filter(item => item.position !== shotsList.length - 1))
   }
 
 

@@ -7,13 +7,13 @@ import './dropdown-add.css'
 
 const DropdownAdd = () => {
 
-  const { photoLineItemArray, setPhotoLineItemArray, menuArray, openMenu, setOpenMenu } = useContext(ShotMenuContext)
+  const { shotsList, setShotsList, shotObjectEmpty, openShotSettingMenu, setOpenShotSettingMenu } = useContext(ShotMenuContext)
 
   const addRow = () => {
-    const arrayCopy = [...photoLineItemArray]
+    const arrayCopy = [...shotsList]
     arrayCopy.map(lineItem => lineItem['lock'] = true)
-    setPhotoLineItemArray([...arrayCopy, menuArray])
-    setOpenMenu({...openMenu, 'position':null}) 
+    setShotsList([...arrayCopy, shotObjectEmpty])
+    setOpenShotSettingMenu({...openShotSettingMenu, 'position':null}) 
   }
 
   return (
