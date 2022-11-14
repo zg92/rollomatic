@@ -1,6 +1,6 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { ShotMenuContext } from '../../../context/shot-menu.context'
-import HeaderEdit from '../../button-components/header-edit/header-edit'
+import HeaderEdit from '../header-edit/header-edit'
 import './shot-menu-header-input.css'
 
 const ShotMenuHeaderInput = ({ category }) => {
@@ -23,14 +23,14 @@ const ShotMenuHeaderInput = ({ category }) => {
             <div className='input-category-current'> {category}:</div>
             {rollSettings[`completed-${category}`] === false ?
                 <div className='input-category-input'>
-                    <input type='text' value={rollSettings['rollSettingsInput'][category]} onChange={(e) => handleChanges(e)} />
+                    <input type='text' value={rollSettings['rollSettingsInput'][category]} onChange={(e) => handleChanges(e)} className='input-console'/>
                     <button className='submit-input' onClick={(e) => submitItem(e)}>Submit</button>
                 </div>
                 :  
-                <>
-                <div>{rollSettings[category]}</div>
+                <div className='input-current-wrapper'>
+                <div className='input-current'>{` ${rollSettings[category]}`}</div>
                 <HeaderEdit category={category}/>
-                </>
+                </div>
             }
         </div>
     )

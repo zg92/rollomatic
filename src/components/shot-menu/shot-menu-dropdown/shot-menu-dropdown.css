@@ -1,14 +1,21 @@
 .dropdown-wrapper {
     display: flex;
     flex-direction: row;
-    width: 400px;
-    border: 5px, solid, rgb(179, 0, 0);
 }
 
 .dropdown-group {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 100px;
-    padding: 5px;
+    justify-content: left;
+    margin: 10px;
+}
+
+.dropdown-type {
+    font-weight: bolder;
+    width: 80%;
+}
+
+.dropdown-result {
+    margin-left: .2rem;
+    width: 30px;
 }

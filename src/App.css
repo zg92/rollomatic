@@ -2,14 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(255, 183, 0);
   width: 100%;
 }
 
 .app-wrapper {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 1000px
+  height: 900px;
+  width: 400px;
+  margin-top: 1rem;
+  position: relative;
 }

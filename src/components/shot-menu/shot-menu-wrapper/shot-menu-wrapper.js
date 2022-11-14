@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { ShotMenuContext } from '../../../context/shot-menu.context'
 import DropdownAdd from '../../button-components/dropdown-add/dropdown-add'
 import DropdownLock from '../../button-components/dropdown-lock/dropdown-lock'
@@ -18,6 +18,7 @@ const ShotMenuWrapper = () => {
             <div className='shot-menu-wrapper' >
               <ShotMenuDropdownWrapper lineData={lineData}/>
             </div>
+            <div className='line-button-wrapper'>
             {
               lineData['position'] === shotsList.length - 1 ?
                 <div className='add-remove-menu'>
@@ -30,6 +31,7 @@ const ShotMenuWrapper = () => {
                 :
                 <DropdownLock position={lineData['position']}/>
             }
+            </div>
           </div>
         )
       }

@@ -29,7 +29,7 @@ export const ShotMenuContextProvider = ({children}) => {
         'lock': false,
       }
 
-    const [openShotSettingMenu, setOpenShotSettingMenu] = useState({'position':null})
+    const [openShotSettingMenu, setOpenShotSettingMenu] = useState({'position':null, 'dropdownType':null})
 
     const value = {shotsList, setShotsList, shotObjectEmpty, openShotSettingMenu, 
       setOpenShotSettingMenu, rollSettings, setRollSettings}

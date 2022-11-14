@@ -1,6 +1,5 @@
 import { useContext } from "react"
 import { ShotMenuContext } from "../../../context/shot-menu.context"
-import Dropdown from "../../dropdown-list/dropdown-list"
 import './shot-menu-dropdown.css'
 
 const ShotMenuDropdown = ({ dropdownType, data, position }) => {
@@ -10,23 +9,25 @@ const ShotMenuDropdown = ({ dropdownType, data, position }) => {
   const menuStateSetter = () => {
     if (shotsList[position]['lock'] !== true) { 
       if (openShotSettingMenu['position'] !== null) {
-        setOpenShotSettingMenu({ ...openShotSettingMenu, 'position': null })}
+        setOpenShotSettingMenu({'position': null, 'dropdownType': null })}
       if (openShotSettingMenu['position'] === null)  {
-        setOpenShotSettingMenu({ ...openShotSettingMenu, 'position': position  })}
+        setOpenShotSettingMenu({'position': position, 'dropdownType': dropdownType  })}
       if (openShotSettingMenu['position'] !== null) {
-        setOpenShotSettingMenu({ ...openShotSettingMenu, 'position': position })}
+        setOpenShotSettingMenu({'position': position, 'dropdownType': dropdownType })}
     }
   }
     
   return (
-    <div className='dropdown-wrapper-' onClick={() => menuStateSetter()}>
+    <div className='dropdown-wrapper' onClick={() => menuStateSetter()}>
       <div className="dropdown-group">
-        {dropdownType}
-        <div className="dropdown-result">{data}</div>
+      <div className="dropdown-type"> {dropdownType}: </div>
+      <div className="dropdown-result"> 
+      { data === null ? 
+      'n/a' : data }
       </div>
-      {openShotSettingMenu['position'] === position ?
-        <Dropdown dropdownType={dropdownType} position={position} />
-        : null}
+
+      </div>
+     
     </div>
   )
 }

@@ -1,24 +1,33 @@
 .menu-line-wrapper {
     display: flex;
     flex-direction: column;
-}
-
-.shot-menu-wrapper{
-    width: 80%;
-    height: 50px;
-    background: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    margin-top: .5rem;
+    width: 100%;
 }
 
 .line-data-wrapper {
     display: flex;
     flex-direction: row;
-    margin-top: 1em;
+    margin-bottom: .5rem;
+}
+
+.shot-menu-wrapper{
+    height: 50px;
+    width: 80%;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid rgb(179, 0, 0);
+}
+.line-button-wrapper {
+    width: 20%;
+    display: flex;
+    justify-content: center;
 }
 
 .add-remove-menu {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
 }

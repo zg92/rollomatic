@@ -1,16 +1,18 @@
 .header-wrapper {
     background: white;
     height: 100px;
-    width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2px solid rgb(179, 0, 0);
+    width: 400px;
 }
 
 .header-items {
-    justify-content: space-around;
+    justify-content: space-evenly;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    height: 80%;
 }
 
 .header-inputs {
