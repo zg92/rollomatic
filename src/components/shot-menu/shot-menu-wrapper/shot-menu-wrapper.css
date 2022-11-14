@@ -1,7 +1,7 @@
 .menu-line-wrapper {
     display: flex;
     flex-direction: column;
-    margin-top: .5rem;
+    margin-top: 10px;
     width: 100%;
 }
 

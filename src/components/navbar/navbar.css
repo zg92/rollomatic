@@ -1,0 +1,40 @@
+.menu-bar {
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding-top: 5px;
+    position: fixed;
+    overflow: hidden;
+    background: rgb(255, 183, 0);
+    top: 0;
+    
+}
+
+.navbar-logo-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+.logo {
+    height:100px;
+}
+
+.navbar-links {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar-link {
+    font-weight: bolder;
+    color: rgb(179, 0, 0);
+    cursor: pointer;
+}
+
+.navbar-link:hover {
+color: white;
+}

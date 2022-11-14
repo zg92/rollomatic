@@ -13,6 +13,7 @@ export const ShotMenuContextProvider = ({children}) => {
       'rollSettingsInput': {'iso':'','film-stock':''},
       'completed-film-stock': false,
       'completed-iso': false,
+      'rollname': null,
     })
 
     const [shotsList, setShotsList] = useState([{
