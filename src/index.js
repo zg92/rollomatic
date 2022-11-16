@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ShotMenuContextProvider} from '././context/shot-menu.context'
+import { PopUpContextProvider } from './context/popup-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <PopUpContextProvider>
   <ShotMenuContextProvider>
     <App />
     </ShotMenuContextProvider> 
+    </PopUpContextProvider>
   </React.StrictMode>
 );
 

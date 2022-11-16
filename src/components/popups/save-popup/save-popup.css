@@ -1,0 +1,34 @@
+.popup-wrapper {
+    position: absolute;
+    background: white;
+    width: 80%;
+    height: 300px;
+    border: 2px solid rgb(179, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.roll-name-input {
+    margin-top: 10px;
+    width: 250px;
+}
+
+.save-roll {
+    margin-top: 10px;
+    width: 60px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.exit-out {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.x:hover {
+    color:  rgb(179, 0, 0);
+}
