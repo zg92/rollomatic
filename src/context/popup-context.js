@@ -1,14 +1,13 @@
 import { createContext, useState } from "react";
 
-export const PopUpContext = createContext({
-    openSavePopUp : Boolean,
-    setOpenSavePopUp : null
-})
+export const PopUpContext = createContext();
 
-export const PopUpContextProvider = ({children}) => {
-    const [openSavePopUp, setOpenSavePopUp] = useState(false)
+export const PopUpContextProvider = ({ children }) => {
+    
+  const [openPopUp, setOpenPopUp] = useState("");
+  const value = { openPopUp, setOpenPopUp };
 
-const value = {openSavePopUp, setOpenSavePopUp} 
-
-return <PopUpContext.Provider value = {value} >{children}</PopUpContext.Provider>
-}
+  return (
+    <PopUpContext.Provider value={value}>{children}</PopUpContext.Provider>
+  );
+};

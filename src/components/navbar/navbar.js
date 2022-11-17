@@ -8,23 +8,22 @@ import { PopUpContext } from '../../context/popup-context'
 const Navbar = () => {
 
     const {setShotsList} = useContext(ShotMenuContext)
-    const {setOpenSavePopUp, openSavePopUp} = useContext(PopUpContext)
+    const {openPopUp, setOpenPopUp} = useContext(PopUpContext)
 
     const resetScreen = async () => {
         setShotsList([{
             'position': 0,
-            'aperture': null,
+            'aperture': null, 
             'shutterspeed': null,
             'lock': false,
           }])
     }
 
-    const activateSavePopup = () => {
-        openSavePopUp ? setOpenSavePopUp(false) : setOpenSavePopUp(true);
-        console.log(openSavePopUp)
+    const activatePopup = (popUpType) => {
+        if (openPopUp === '') {setOpenPopUp(popUpType)}
+        if (openPopUp !== '') {setOpenPopUp(popUpType)}
+        if (openPopUp === popUpType) {setOpenPopUp('')}
     }
-
-    
 
     return (
         <nav className='menu-bar'>
@@ -33,8 +32,8 @@ const Navbar = () => {
             </div>
             <div className='navbar-links'>
                 <a className='navbar-link' onClick={() => {resetScreen()}}>New</a>
-                <a className='navbar-link' onClick={()=> activateSavePopup() }>Save</a>
-                <a className='navbar-link'>Login</a>
+                <a className='navbar-link' onClick={()=> activatePopup('save') }>Save</a>
+                <a className='navbar-link' onClick={()=> activatePopup('login') }>Login</a>
             </div>
         </nav>
 

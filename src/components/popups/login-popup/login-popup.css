@@ -1,4 +1,9 @@
-.login {
+.roll-name-input {
+    margin-top: 10px;
+    width: 250px;
+}
+
+.save-roll {
     margin-top: 10px;
     width: 60px;
     font-weight: bolder;
