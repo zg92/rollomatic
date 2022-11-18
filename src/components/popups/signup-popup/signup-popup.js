@@ -1,17 +1,28 @@
 import { useContext, useState } from "react";
 import { changeHandler } from "../../../utilities/changeHandler";
-import "./login-popup.css";
-import {} from "../../../utilities/firestore-save";
-import { loginUser } from "../../../utilities/firestore-auth";
+import "./signup-popup.css";
+import { createUser } from "../../../utilities/firestore-auth";
 import { PopUpContext } from "../../../context/popup-context";
 
-const LoginPopup = () => {
+const SignUpPopup = () => {
   const [usernameInput, setUsernameInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
+  const [passwordInputConfirm, setPasswordInputConfirm] = useState("");
   const { setOpenPopUp } = useContext(PopUpContext);
 
-  const login = async () => {
-    loginUser(usernameInput, passwordInput);
+  const submitCreateUser = async () => {
+    if (passwordInput === passwordInputConfirm) {
+      try {
+        await createUser(usernameInput, passwordInput);
+        setOpenPopUp("");
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      console.warning("passwords must match");
+    }
+    setPasswordInput("");
+    setPasswordInputConfirm("");
   };
 
   return (
@@ -33,20 +44,27 @@ const LoginPopup = () => {
         type="password"
         onChange={(e) => changeHandler(e, setPasswordInput)}
       />
-      <button className="login-button" onClick={() => login()}>
-        Login
+      <div className="popup-text"> Confirm Password</div>
+      <input
+        className="roll-name-input"
+        value={passwordInputConfirm}
+        type="password"
+        onChange={(e) => changeHandler(e, setPasswordInputConfirm)}
+      />
+      <button className="sign-up-button" onClick={() => submitCreateUser()}>
+        Sign Up
       </button>
       <div className="bottom-prompt">
-        Don't have an account?{" "}
+        Already Have an Account?
         <div
           className="bottom-prompt-link"
-          onClick={() => setOpenPopUp("signup")}
+          onClick={() => setOpenPopUp("login")}
         >
-          Sign up
+          Login
         </div>
       </div>
     </>
   );
 };
 
-export default LoginPopup;
+export default SignUpPopup;

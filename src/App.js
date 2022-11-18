@@ -9,6 +9,7 @@ import SavePopup from "./components/popups/save-popup/save-popup";
 import { PopUpContext } from "./context/popup-context";
 import LoginPopup from "./components/popups/login-popup/login-popup";
 import PopUp from "./components/popups/popup.js/popup";
+import SignUpPopup from "./components/popups/signup-popup/signup-popup";
 
 function App() {
   const { openShotSettingMenu } = useContext(ShotMenuContext);
@@ -26,6 +27,7 @@ function App() {
       </div>
       {openPopUp === "save" ? <PopUp type={<SavePopup />} /> : null}
       {openPopUp === "login" ? <PopUp type={<LoginPopup />} /> : null}
+      {openPopUp === "signup" ? <PopUp type={<SignUpPopup />} /> : null}
     </div>
   );
 }

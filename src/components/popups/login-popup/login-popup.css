@@ -3,10 +3,24 @@
     width: 250px;
 }
 
-.save-roll {
+.login-button {
     margin-top: 10px;
-    width: 60px;
+    width: 80px;
     font-weight: bolder;
     cursor: pointer;
+}
+
+.bottom-prompt {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+}
+
+.bottom-prompt-link {
+    margin-left: .15em;
+    text-decoration: underline;
+    cursor: pointer;
+    color: rgb(67, 19, 112);
+    font-weight: bold;
 }
 

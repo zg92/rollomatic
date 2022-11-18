@@ -1,39 +1,51 @@
 import { createContext, useState } from "react";
 
-export const ShotMenuContext = createContext({
-    shotsList : null,
-    setShotsList : null
-})
+export const ShotMenuContext = createContext();
 
-export const ShotMenuContextProvider = ({children}) => {
+export const ShotMenuContextProvider = ({ children }) => {
+  const [rollSettings, setRollSettings] = useState({
+    "film-stock": null,
+    iso: null,
+    rollSettingsInput: { iso: "", "film-stock": "" },
+    "completed-film-stock": false,
+    "completed-iso": false,
+    rollname: null,
+  });
 
-    const [rollSettings, setRollSettings] = useState({
-      'film-stock': null,
-      'iso': null,
-      'rollSettingsInput': {'iso':'','film-stock':''},
-      'completed-film-stock': false,
-      'completed-iso': false,
-      'rollname': null,
-    })
+  const [shotsList, setShotsList] = useState([
+    {
+      position: 0,
+      aperture: null,
+      shutterspeed: null,
+      lock: false,
+    },
+  ]);
 
-    const [shotsList, setShotsList] = useState([{
-        'position': 0,
-        'aperture': null,
-        'shutterspeed': null,
-        'lock': false,
-      }])
+  const shotObjectEmpty = {
+    position: shotsList.length,
+    aperture: null,
+    shutterspeed: null,
+    lock: false,
+  };
 
-    const shotObjectEmpty = {
-        'position': shotsList.length,
-        'aperture': null,
-        'shutterspeed': null,
-        'lock': false,
-      }
+  const [openShotSettingMenu, setOpenShotSettingMenu] = useState({
+    position: null,
+    dropdownType: null,
+  });
 
-    const [openShotSettingMenu, setOpenShotSettingMenu] = useState({'position':null, 'dropdownType':null})
+  const value = {
+    shotsList,
+    setShotsList,
+    shotObjectEmpty,
+    openShotSettingMenu,
+    setOpenShotSettingMenu,
+    rollSettings,
+    setRollSettings,
+  };
 
-    const value = {shotsList, setShotsList, shotObjectEmpty, openShotSettingMenu, 
-      setOpenShotSettingMenu, rollSettings, setRollSettings}
-
-    return <ShotMenuContext.Provider value = {value}>{children}</ShotMenuContext.Provider>
-}
+  return (
+    <ShotMenuContext.Provider value={value}>
+      {children}
+    </ShotMenuContext.Provider>
+  );
+};

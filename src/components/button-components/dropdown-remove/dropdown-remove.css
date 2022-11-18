@@ -1,21 +1,8 @@
-.dropdown-remove-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.dropdown-remove-icon {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
+.remove-button {
     background: white;
 }
 
-.dropdown-remove-icon:hover {
-    cursor:pointer;
+.remove-button:hover {
     background: rgb(183, 24, 24);
     color:white;
 }

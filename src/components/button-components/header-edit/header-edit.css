@@ -1,0 +1,8 @@
+.edit-roll-button {
+    background: gray;
+}
+
+.edit-roll-button:hover {
+    background: green;
+    color: white;
+}

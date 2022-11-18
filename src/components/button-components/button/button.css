@@ -1,23 +1,15 @@
-.header-edit-wrapper {
-
-    height: 24px;
+.button-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.header-edit-icon {
-    width: 27.5px;
-    height: 27.5px;
+.button-icon {
+    width: 31px;
+    height: 31px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background: gray;
-}
-
-.header-edit-icon:hover {
     cursor:pointer;
-    background: green;
-    color: white;
 }

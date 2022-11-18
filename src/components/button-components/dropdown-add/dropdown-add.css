@@ -1,21 +1,8 @@
-.dropdown-add-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.dropdown-add-icon {
-    width: 31px;
-    height: 31px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
+.add-button {
     background: white;
 }
 
-.dropdown-add-icon:hover {
-    cursor:pointer;
+.add-button:hover {
     background: green;
     color:white;
 }

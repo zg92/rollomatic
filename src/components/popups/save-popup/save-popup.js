@@ -1,5 +1,4 @@
 import { useContext, useState } from "react";
-import { PopUpContext } from "../../../context/popup-context";
 import "./save-popup.css";
 import { saveRoll } from "../../../utilities/firestore-save";
 import { ShotMenuContext } from "../../../context/shot-menu.context";
