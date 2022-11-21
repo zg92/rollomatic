@@ -21,13 +21,6 @@ export const ShotMenuContextProvider = ({ children }) => {
     },
   ]);
 
-  const shotObjectEmpty = {
-    position: shotsList.length,
-    aperture: null,
-    shutterspeed: null,
-    lock: false,
-  };
-
   const [openShotSettingMenu, setOpenShotSettingMenu] = useState({
     position: null,
     dropdownType: null,
@@ -36,7 +29,6 @@ export const ShotMenuContextProvider = ({ children }) => {
   const value = {
     shotsList,
     setShotsList,
-    shotObjectEmpty,
     openShotSettingMenu,
     setOpenShotSettingMenu,
     rollSettings,

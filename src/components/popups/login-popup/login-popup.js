@@ -12,6 +12,8 @@ const LoginPopup = () => {
 
   const login = async () => {
     loginUser(usernameInput, passwordInput);
+    setUsernameInput("");
+    setPasswordInput("");
   };
 
   return (

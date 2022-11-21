@@ -1,26 +1,47 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { collection, addDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  doc,
+  collection,
+  setDoc,
+  getDocs,
+} from "firebase/firestore";
 import { firebaseConfig } from "./admin-firebase";
 
 const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
-export const saveRoll = async (rollName, rollSettings, shot) => {
+const getDate = () => {
+  return new Date().toLocaleString().split(",")[0];
+};
+
+export const saveRoll = async (user, rollName, rollSettings, shotsList) => {
+  if (!user) return;
+  const userDocRef = doc(db, "users", user);
+
+  const structuredData = {
+    metaData: {
+      rollName: rollName,
+      date: getDate(),
+      filmStock: rollSettings["film-stock"],
+      iso: rollSettings.iso,
+    },
+    rollData: [...shotsList],
+  };
+
   try {
-    const docRef = await addDoc(collection(db, "rolls"), {
-      rollname: rollName,
-      metadata: {
-        "film-stock": rollSettings["film-stock"],
-        iso: rollSettings.iso,
-        position: shot.position,
-        aperture: shot.aperture,
-        shutterspeed: shot.shutterspeed,
-      },
-    });
-    console.log("Document written with ID: ", docRef.id);
+    await setDoc(doc(userDocRef, "rolls", rollName), structuredData);
   } catch (e) {
     console.log("Error adding document", e);
+  }
+};
+
+export const getRolls = async (user) => {
+  const userDocRef = collection(db, "users", user, "rolls");
+  try {
+    return await getDocs(userDocRef);
+  } catch (e) {
+    console.log(e);
   }
 };

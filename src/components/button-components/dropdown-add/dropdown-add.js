@@ -15,7 +15,15 @@ const DropdownAdd = () => {
   const addRow = () => {
     const arrayCopy = [...shotsList];
     arrayCopy.map((lineItem) => (lineItem["lock"] = true));
-    setShotsList([...arrayCopy, shotObjectEmpty]);
+    setShotsList([
+      ...arrayCopy,
+      {
+        position: shotsList.length,
+        aperture: null,
+        shutterspeed: null,
+        lock: false,
+      },
+    ]);
     setOpenShotSettingMenu({ ...openShotSettingMenu, position: null });
   };
 

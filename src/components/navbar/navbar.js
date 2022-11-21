@@ -3,23 +3,13 @@ import Logo from "../../../src/logo.png";
 import { useContext } from "react";
 import { ShotMenuContext } from "../../context/shot-menu.context";
 import { PopUpContext } from "../../context/popup-context";
+import { logoutUser } from "../../utilities/firestore-auth";
+import { UserContext } from "../../context/user.context";
 
 const Navbar = () => {
   const { setShotsList } = useContext(ShotMenuContext);
   const { openPopUp, setOpenPopUp } = useContext(PopUpContext);
-
-  const resetScreen = async () => {
-    if (openPopUp === "") {
-      setShotsList([
-        {
-          position: 0,
-          aperture: null,
-          shutterspeed: null,
-          lock: false,
-        },
-      ]);
-    }
-  };
+  const { user } = useContext(UserContext);
 
   const activatePopup = (popUpType) => {
     if (openPopUp === "") {
@@ -39,20 +29,26 @@ const Navbar = () => {
         <img src={Logo} className="logo" />
       </div>
       <div className="navbar-links">
-        <a
-          className="navbar-link"
-          onClick={() => {
-            resetScreen();
-          }}
-        >
+        <a className="navbar-link" onClick={() => activatePopup("new")}>
           New
         </a>
         <a className="navbar-link" onClick={() => activatePopup("save")}>
           Save
         </a>
-        <a className="navbar-link" onClick={() => activatePopup("login")}>
-          Login
-        </a>
+        {user === null ? (
+          <a className="navbar-link" onClick={() => activatePopup("login")}>
+            Login
+          </a>
+        ) : (
+          <>
+            <a className="navbar-link" onClick={() => activatePopup("open")}>
+              Open
+            </a>
+            <a className="navbar-link" onClick={logoutUser}>
+              Logout
+            </a>
+          </>
+        )}
       </div>
     </nav>
   );
