@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import './sassStyles/main.scss';
 
 .App {
   font-family: 'Roboto', sans-serif;
@@ -8,7 +8,7 @@
   align-items: center;
   width: 100%;
   position: relative;
-  
+
 }
 
 .app-wrapper {
@@ -16,9 +16,8 @@
   position: relative;
   flex-direction: column;
   align-items: center;
-  width: 400px;
+  width: 50%;
+  min-width: 400px;
   margin-top: 90px;
   height: 100vh;
-
 }
-

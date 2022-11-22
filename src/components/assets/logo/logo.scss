@@ -1,0 +1,19 @@
+@import '../../../sassStyles/main.scss';
+
+.logo-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+    width: 220px;
+}
+
+.logo-img {
+    color: $backgroundColorBlank;
+}
+
+.logo-text {
+    color: $fontWhite;
+    margin-left: 5%;
+    font-family: $logoFont;
+}

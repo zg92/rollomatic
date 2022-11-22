@@ -1,10 +1,10 @@
 @import '../../../sassStyles/variables';
 
 .check-roll-button {
-    background: $accentColorGreen;
+    background: $accentColorGrey;
 }
 
 .check-roll-button:hover {
-    background: $accentColorGrey;
+    background: $accentColorGreen;
     color: $backgroundColorBlank;
 }

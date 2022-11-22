@@ -1,10 +1,11 @@
 import "./navbar.scss";
-import Logo from "../assets/logo.png";
+
 import { useContext } from "react";
 import { ShotMenuContext } from "../../context/shot-menu.context";
 import { PopUpContext } from "../../context/popup-context";
 import { logoutUser } from "../../utilities/firestore-auth";
 import { UserContext } from "../../context/user.context";
+import Logo from "../assets/logo/logo";
 
 const Navbar = () => {
   const { setShotsList, rollSettings } = useContext(ShotMenuContext);
@@ -39,7 +40,7 @@ const Navbar = () => {
   return (
     <nav className="menu-bar">
       <div className="navbar-logo-wrapper">
-        <img src={Logo} className="logo" />
+        <Logo />
       </div>
       <div className="navbar-links">
         <h3 className="navbar-link" onClick={() => activatePopup("new")}>
