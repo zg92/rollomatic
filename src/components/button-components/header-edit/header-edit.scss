@@ -1,8 +1,10 @@
+@import '../../../sassStyles/variables';
+
 .edit-roll-button {
-    background: gray;
+    background: $accentColorGrey;
 }
 
 .edit-roll-button:hover {
-    background: green;
-    color: white;
+    background: $accentColorGreen;
+    color: $backgroundColorBlank;
 }

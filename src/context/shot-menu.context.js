@@ -4,8 +4,8 @@ export const ShotMenuContext = createContext();
 
 export const ShotMenuContextProvider = ({ children }) => {
   const [rollSettings, setRollSettings] = useState({
-    "film-stock": null,
-    iso: null,
+    "film-stock": "",
+    iso: "",
     rollSettingsInput: { iso: "", "film-stock": "" },
     "completed-film-stock": false,
     "completed-iso": false,

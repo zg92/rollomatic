@@ -7,7 +7,7 @@ import { logoutUser } from "../../utilities/firestore-auth";
 import { UserContext } from "../../context/user.context";
 
 const Navbar = () => {
-  const { setShotsList } = useContext(ShotMenuContext);
+  const { setShotsList, rollSettings } = useContext(ShotMenuContext);
   const { openPopUp, setOpenPopUp } = useContext(PopUpContext);
   const { user } = useContext(UserContext);
 
@@ -23,6 +23,14 @@ const Navbar = () => {
     }
   };
 
+  const saveCheck = () => {
+    if (rollSettings["film-stock"] === "" || rollSettings["iso"] === "") {
+      return;
+    } else {
+      activatePopup("save");
+    }
+  };
+
   const logout = () => {
     logoutUser();
     setOpenPopUp("");
@@ -34,24 +42,24 @@ const Navbar = () => {
         <img src={Logo} className="logo" />
       </div>
       <div className="navbar-links">
-        <a className="navbar-link" onClick={() => activatePopup("new")}>
+        <h3 className="navbar-link" onClick={() => activatePopup("new")}>
           New
-        </a>
-        <a className="navbar-link" onClick={() => activatePopup("save")}>
-          Save
-        </a>
+        </h3>
         {user === null ? (
-          <a className="navbar-link" onClick={() => activatePopup("login")}>
+          <h3 className="navbar-link" onClick={() => activatePopup("login")}>
             Login
-          </a>
+          </h3>
         ) : (
           <>
-            <a className="navbar-link" onClick={() => activatePopup("open")}>
+            <h3 className="navbar-link" onClick={saveCheck}>
+              Save
+            </h3>
+            <h3 className="navbar-link" onClick={() => activatePopup("open")}>
               Open
-            </a>
-            <a className="navbar-link" onClick={logout}>
+            </h3>
+            <h3 className="navbar-link" onClick={logout}>
               Logout
-            </a>
+            </h3>
           </>
         )}
       </div>

@@ -10,18 +10,17 @@
     height: 80px;
     position: fixed;
     background: $backgroundColorSecondary;
-    top:0;
+    top: 0;
     border-bottom: $borderDefault $accentColor;
-    
 }
 
 .navbar-logo-wrapper {
     display: flex;
     justify-content: center;
-  }
+}
 
 .logo {
-    height:75px;
+    height: 75px;
     margin-left: 10px;
 }
 
@@ -38,5 +37,5 @@
 }
 
 .navbar-link:hover {
-color: $accentColor;
+    color: $accentColor;
 }

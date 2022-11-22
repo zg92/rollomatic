@@ -28,6 +28,7 @@ const SavePopup = () => {
           onChange={(e) => changeHandler(e, setRollName)}
         />
       </div>
+
       <SubmitButton text="Save" onClick={submitRoll} />
     </div>
   );

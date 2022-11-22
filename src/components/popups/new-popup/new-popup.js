@@ -28,17 +28,17 @@ const NewPopup = () => {
   };
 
   const clearHeader = async () => {
-    await setRollSettings({
+    setRollSettings({
       ...rollSettings,
-      "film-stock": null,
-      iso: null,
+      rollSettingsInput: { iso: "", "film-stock": "" },
       "completed-film-stock": false,
       "completed-iso": false,
     });
+    console.log(rollSettings);
   };
 
   const resetList = async () => {
-    await setShotsList([
+    setShotsList([
       {
         position: 0,
         aperture: null,
