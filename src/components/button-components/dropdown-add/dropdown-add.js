@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { HiOutlinePlusSm } from "react-icons/hi";
 import { ShotMenuContext } from "../../../context/shot-menu.context";
-import "./dropdown-add.css";
+import "./dropdown-add.scss";
 
 const DropdownAdd = () => {
   const {

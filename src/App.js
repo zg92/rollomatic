@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import "./App.css";
 import ShotMenuHeader from "./components/header/shot-menu-header/shot-menu-header";
 import DropdownList from "./components/shot-menu/dropdown-list/dropdown-list";

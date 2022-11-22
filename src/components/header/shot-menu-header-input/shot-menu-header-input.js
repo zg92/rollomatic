@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { ShotMenuContext } from "../../../context/shot-menu.context";
 import Button from "../../button-components/button/button";
-import "./shot-menu-header-input.css";
+import SubmitButton from "../../button-components/submit-button/submit-button";
+import "./shot-menu-header-input.scss";
 
 const ShotMenuHeaderInput = ({ category }) => {
   const { rollSettings, setRollSettings } = useContext(ShotMenuContext);
@@ -26,7 +27,7 @@ const ShotMenuHeaderInput = ({ category }) => {
 
   return (
     <div className="input-wrapper">
-      <div className="input-category-current"> {category}:</div>
+      <div className="category-title">{category}:</div>
       {rollSettings[`completed-${category}`] === false ? (
         <div className="input-category-input">
           <input
@@ -35,9 +36,7 @@ const ShotMenuHeaderInput = ({ category }) => {
             onChange={(e) => handleChanges(e)}
             className="input-console"
           />
-          <button className="submit-input" onClick={(e) => submitItem(e)}>
-            Submit
-          </button>
+          <SubmitButton text="Submit" onClick={(e) => submitItem(e)} />
         </div>
       ) : (
         <div className="input-current-wrapper">

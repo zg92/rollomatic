@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { ShotMenuContext } from "../../../context/shot-menu.context";
-import "./dropdown-lock.css";
+import "./dropdown-lock.scss";
 import { HiOutlineLockClosed, HiOutlineLockOpen } from "react-icons/hi";
 
 const DropdownLock = ({ position }) => {

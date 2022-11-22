@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ShotMenuContext } from "../../../context/shot-menu.context";
-import "./shot-menu-dropdown.css";
+import "./shot-menu-dropdown.scss";
 
 const ShotMenuDropdown = ({ dropdownType, data, position }) => {
   const { openShotSettingMenu, setOpenShotSettingMenu, shotsList } =

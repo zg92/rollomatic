@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
 import { changeHandler } from "../../../utilities/changeHandler";
-import "./signup-popup.css";
+import "./signup-popup.scss";
 import { createUser } from "../../../utilities/firestore-auth";
 import { PopUpContext } from "../../../context/popup-context";
+import SubmitButton from "../../button-components/submit-button/submit-button";
 
 const SignUpPopup = () => {
   const [usernameInput, setUsernameInput] = useState("");
@@ -26,34 +27,37 @@ const SignUpPopup = () => {
   };
 
   return (
-    <>
+    <div className="popup-content">
       <div className="popup-title">
-        <h2>Login to your account</h2>
+        <h2>Signup For An Account</h2>
       </div>
-      <div className="popup-text">Email</div>
-      <input
-        className="roll-name-input"
-        value={usernameInput}
-        type="text"
-        onChange={(e) => changeHandler(e, setUsernameInput)}
-      />
-      <div className="popup-text"> Password</div>
-      <input
-        className="roll-name-input"
-        value={passwordInput}
-        type="password"
-        onChange={(e) => changeHandler(e, setPasswordInput)}
-      />
-      <div className="popup-text"> Confirm Password</div>
-      <input
-        className="roll-name-input"
-        value={passwordInputConfirm}
-        type="password"
-        onChange={(e) => changeHandler(e, setPasswordInputConfirm)}
-      />
-      <button className="sign-up-button" onClick={() => submitCreateUser()}>
-        Sign Up
-      </button>
+      <div className="roll-options-row signup-wrapper">
+        <div className="popup-text">Email</div>
+        <input
+          className="roll-name-input"
+          value={usernameInput}
+          type="text"
+          onChange={(e) => changeHandler(e, setUsernameInput)}
+        />
+
+        <div className="popup-text"> Password</div>
+        <input
+          className="roll-name-input "
+          value={passwordInput}
+          type="password"
+          onChange={(e) => changeHandler(e, setPasswordInput)}
+        />
+
+        <div className="popup-text"> Confirm Password</div>
+        <input
+          className="roll-name-input "
+          value={passwordInputConfirm}
+          type="password"
+          onChange={(e) => changeHandler(e, setPasswordInputConfirm)}
+        />
+        <SubmitButton text="Sign Up" onClick={() => submitCreateUser()} />
+      </div>
+
       <div className="bottom-prompt">
         Already Have an Account?
         <div
@@ -63,7 +67,7 @@ const SignUpPopup = () => {
           Login
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

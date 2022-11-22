@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
-import "./new-popup.css";
+import "./new-popup.scss";
 import { ShotMenuContext } from "../../../context/shot-menu.context";
 import { changeHandler } from "../../../utilities/changeHandler";
 import { PopUpContext } from "../../../context/popup-context";
+import SubmitButton from "../../button-components/submit-button/submit-button";
 
 const NewPopup = () => {
   const [shotCount, setShotCount] = useState(Number);
@@ -52,28 +53,24 @@ const NewPopup = () => {
   };
 
   return (
-    <>
+    <div className="popup-content">
       <div className="popup-title">
         <h2>Start a New Roll</h2>
       </div>
-      <div>
-        Start Blank
-        <button className="setup-roll" onClick={resetList}>
-          New Roll
-        </button>
+      <div className="roll-options-row new-wrapper">
+        Start a blank roll
+        <SubmitButton text="New Roll" onClick={resetList} />
       </div>
-      <div>
-        Set Shot Count
+      <div className="roll-options-row new-wrapper">
+        Start a roll with shot count
         <input
           className="shot-count-input"
           value={Number(shotCount)}
           onChange={(e) => changeHandler(e, setShotCount)}
         />
+        <SubmitButton text="New Roll" onClick={setupRoll} />
       </div>
-      <button className="setup-roll" onClick={setupRoll}>
-        New Roll
-      </button>
-    </>
+    </div>
   );
 };
 

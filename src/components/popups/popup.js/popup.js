@@ -1,4 +1,4 @@
-import "./popup.css";
+import "./popup.scss";
 import { HiX } from "react-icons/hi";
 import { useContext } from "react";
 import { PopUpContext } from "../../../context/popup-context";

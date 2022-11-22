@@ -1,0 +1,18 @@
+@import '../../../sassStyles/main.scss';
+
+.button-submit {
+    background: $backgroundColorSecondary;
+    cursor: pointer;
+    color: $fontWhite;
+    border-radius: $borderRadiusDefault;
+    padding: 5px;
+    width: 125px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: $borderRadiusDefault;
+    box-shadow: $boxShadowButton;
+}
+
+.button-submit:hover {
+    color: $accentColor;
+}

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import "./open-popup.css";
+import "./open-popup.scss";
 import { getRolls } from "../../../utilities/firestore-save";
 import { UserContext } from "../../../context/user.context";
 import { ShotMenuContext } from "../../../context/shot-menu.context";
@@ -52,14 +52,7 @@ const OpenPopup = () => {
               Name: {i.metaData.rollName}
             </div>
             <div className="saved-roll-line-item-data">
-              Data: {i.metaData.date}{" "}
-            </div>
-            <div className="saved-roll-line-item-data">
-              Film Stock: {i.metaData.filmStock}
-            </div>
-            <div className="saved-roll-line-item-data">
-              {" "}
-              ISO: {i.metaData.iso}{" "}
+              Date: {i.metaData.date}{" "}
             </div>
           </div>
         ))}

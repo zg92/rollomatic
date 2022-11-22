@@ -1,10 +1,16 @@
+@import '../../../sassStyles/main.scss';
+
 .input-wrapper {
     width: 350px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: 35px;
+}
+
+.category-title {
+    width: 30%;
 }
 
 .input-category-current {
@@ -12,26 +18,19 @@
     display: flex;
 }
 
-.input-current-wrapper {
-    width: 200px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
 .input-current {
     width: 150px;
 }
 
 .input-console {
-    width: 70%;
+    width: 40%;
 }
 
 .input-category-input {
-width: 200px;
-display: flex;
-flex-direction: row;
-justify-content: center;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .submit-input {
@@ -39,6 +38,3 @@ justify-content: center;
     height: 20px;
     width: 30%;
 }
-
-
-

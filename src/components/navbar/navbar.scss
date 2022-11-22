@@ -1,3 +1,5 @@
+@import '../../sassStyles/main';
+
 .menu-bar {
     width: 100%;
     z-index: 2;
@@ -6,11 +8,10 @@
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    padding-top: 5px;
     position: fixed;
-    overflow: hidden;
-    background: rgb(255, 183, 0);
-    top: 0;
+    background: $backgroundColorSecondary;
+    top:0;
+    border-bottom: $borderDefault $accentColor;
     
 }
 
@@ -20,21 +21,22 @@
   }
 
 .logo {
-    height:100px;
+    height:75px;
+    margin-left: 10px;
 }
 
 .navbar-links {
-    width: 300px;
+    width: 400px;
     display: flex;
     justify-content: space-around;
 }
 
 .navbar-link {
     font-weight: bolder;
-    color: rgb(179, 0, 0);
+    color: $accentColorSecondary;
     cursor: pointer;
 }
 
 .navbar-link:hover {
-color: white;
+color: $accentColor;
 }

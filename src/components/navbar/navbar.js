@@ -1,4 +1,4 @@
-import "./navbar.css";
+import "./navbar.scss";
 import Logo from "../../../src/logo.png";
 import { useContext } from "react";
 import { ShotMenuContext } from "../../context/shot-menu.context";

@@ -1,0 +1,10 @@
+@import '../../../sassStyles/main.scss';
+
+.add-button {
+    background: $backgroundColorBlank;
+}
+
+.add-button:hover {
+    background: $accentColorGreen;
+    color: $fontWhite;
+}

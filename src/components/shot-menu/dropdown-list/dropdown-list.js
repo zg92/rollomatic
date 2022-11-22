@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { ShotMenuContext } from "../../../context/shot-menu.context";
-import "./dropdown-list.css";
+import "./dropdown-list.scss";
 
 const DropdownList = () => {
   const {
@@ -10,18 +10,6 @@ const DropdownList = () => {
     openShotSettingMenu,
   } = useContext(ShotMenuContext);
   const dropdownMenu = useRef(document.querySelector(".dropdown-list-wrapper"));
-
-  // useEffect(() => {
-  //   if (openShotSettingMenu["position"] === null) {
-  //     dropdownMenu.current.style.transform = "translateY(100vh)";
-  //     // dropdownMenu.current.style.display = "block";
-  //   }
-
-  //   if (openShotSettingMenu["position"] !== null) {
-  //     dropdownMenu.current.style.transform = "translateY(0)";
-  //     // dropdownMenu.current.style.display = "none";
-  //   }
-  // }, [openShotSettingMenu["position"]]);
 
   const listData = {
     aperture: ["f/2.8", "f/4", "f/5.6", "f/8", "f/11", "f/16", "f/22"],

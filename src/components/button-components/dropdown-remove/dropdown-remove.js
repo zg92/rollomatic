@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { HiMinusSm } from "react-icons/hi";
 import { ShotMenuContext } from "../../../context/shot-menu.context";
-import "./dropdown-remove.css";
+import "./dropdown-remove.scss";
 
 const DropdownRemove = () => {
   const { shotsList, setShotsList } = useContext(ShotMenuContext);

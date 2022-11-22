@@ -1,3 +1,5 @@
+@import '../../../sassStyles/variables.scss';
+
 .menu-line-wrapper {
     display: flex;
     flex-direction: column;
@@ -14,10 +16,12 @@
 .shot-menu-wrapper{
     height: 50px;
     width: 80%;
-    background: white;
+    background: $backgroundColorBlank;
     display: flex;
     flex-direction: row;
-    border: 2px solid rgb(179, 0, 0);
+    border: $borderDefault $accentColor;
+    border-radius: $borderRadiusDefaultMoreRound;
+    box-shadow: $boxShadowDefault;
 }
 .line-button-wrapper {
     width: 20%;

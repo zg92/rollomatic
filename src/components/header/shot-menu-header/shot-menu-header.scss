@@ -1,0 +1,28 @@
+@import '../../../sassStyles/main.scss';
+
+.header-wrapper {
+    background: $backgroundColorBlank;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: $borderDefault $accentColor;
+    height: 10%;
+    min-height: 125px;
+    width: 100%;
+    border-radius: $borderRadiusDefault;
+    box-shadow: $boxShadowDefault;
+
+}
+
+.header-items {
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.header-inputs {
+    display: flex;
+    flex-direction: column;
+}

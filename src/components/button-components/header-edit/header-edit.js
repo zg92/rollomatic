@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { HiPencil } from "react-icons/hi";
 import { ShotMenuContext } from "../../../context/shot-menu.context";
-import "./header-edit.css";
+import "./header-edit.scss";
 
 const HeaderEdit = ({ category }) => {
   const { rollSettings, setRollSettings } = useContext(ShotMenuContext);

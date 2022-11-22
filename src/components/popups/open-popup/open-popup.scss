@@ -1,0 +1,14 @@
+@import '../../../sassStyles/main.scss';
+
+.saved-roll-line-item-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.saved-roll-line-item-wrapper:hover {
+    font-weight: bolder;
+    cursor: pointer;
+}

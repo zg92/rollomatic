@@ -1,0 +1,10 @@
+@import '../../../sassStyles/main.scss';
+
+.remove-button {
+    background: $backgroundColorBlank;
+}
+
+.remove-button:hover {
+    background: $accentColor;
+    color: $fontWhite;
+}

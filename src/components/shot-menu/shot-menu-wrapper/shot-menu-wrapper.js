@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ShotMenuContext } from "../../../context/shot-menu.context";
 import Button from "../../button-components/button/button";
 import ShotMenuDropdownWrapper from "../shot-menu-dropdown-wrapper/shot-menu-dropdown-wrapper";
-import "./shot-menu-wrapper.css";
+import "./shot-menu-wrapper.scss";
 
 const ShotMenuWrapper = () => {
   const { shotsList } = useContext(ShotMenuContext);
