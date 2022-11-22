@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import "./App.css";
+import "./App.scss";
 import ShotMenuHeader from "./components/header/shot-menu-header/shot-menu-header";
 import DropdownList from "./components/shot-menu/dropdown-list/dropdown-list";
 import ShotMenuWrapper from "./components/shot-menu/shot-menu-wrapper/shot-menu-wrapper";
@@ -27,11 +27,21 @@ function App() {
           <DropdownList position={openShotSettingMenu["position"]} />
         ) : null}
       </div>
-      {openPopUp === "new" ? <PopUp type={<NewPopup />} /> : null}
-      {openPopUp === "save" ? <PopUp type={<SavePopup />} /> : null}
-      {openPopUp === "open" ? <PopUp type={<OpenPopup />} /> : null}
-      {openPopUp === "login" ? <PopUp type={<LoginPopup />} /> : null}
-      {openPopUp === "signup" ? <PopUp type={<SignUpPopup />} /> : null}
+      {openPopUp === "new" ? (
+        <PopUp type={<NewPopup />} title="Start a New Roll" />
+      ) : null}
+      {openPopUp === "save" ? (
+        <PopUp type={<SavePopup />} title="Save Your Roll" />
+      ) : null}
+      {openPopUp === "open" ? (
+        <PopUp type={<OpenPopup />} title="Select a Roll to Open" />
+      ) : null}
+      {openPopUp === "login" ? (
+        <PopUp type={<LoginPopup />} title="Login to Your account" />
+      ) : null}
+      {openPopUp === "signup" ? (
+        <PopUp type={<SignUpPopup />} title="Signup For an Account" />
+      ) : null}
     </div>
   );
 }

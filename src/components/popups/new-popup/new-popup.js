@@ -7,10 +7,25 @@ import SubmitButton from "../../button-components/submit-button/submit-button";
 
 const NewPopup = () => {
   const [shotCount, setShotCount] = useState(Number);
+  const [radioSelection, setRadioSelection] = useState();
 
   const { setShotsList, setRollSettings, rollSettings } =
     useContext(ShotMenuContext);
   const { setOpenPopUp } = useContext(PopUpContext);
+
+  const changeHandlerRadio = (e) => {
+    setRadioSelection(e.target.value);
+  };
+
+  const newRoll = () => {
+    if (radioSelection === "blank") {
+      resetList();
+    }
+
+    if (radioSelection === "set") {
+      setupRoll();
+    }
+  };
 
   const clearHeader = async () => {
     await setRollSettings({
@@ -53,23 +68,41 @@ const NewPopup = () => {
   };
 
   return (
-    <div className="popup-content">
-      <div className="popup-title">
-        <h2>Start a New Roll</h2>
-      </div>
-      <div className="roll-options-row new-wrapper">
-        Start a blank roll
-        <SubmitButton text="New Roll" onClick={resetList} />
-      </div>
-      <div className="roll-options-row new-wrapper">
-        Start a roll with shot count
+    <div className="popup-content new-content">
+      <div className="roll-options-row new-input-row">
         <input
-          className="shot-count-input"
+          type="radio"
+          name="set-roll"
+          value="blank"
+          className="new-roll-radio"
+          onChange={(e) => {
+            changeHandlerRadio(e);
+          }}
+        />
+        <label for="set-roll" className="new-roll-label">
+          Start a blank roll
+        </label>
+      </div>
+      <div className="roll-options-row new-input-row">
+        <input
+          type="radio"
+          name="set-roll"
+          value="set"
+          className="new-roll-radio"
+          onChange={(e) => {
+            changeHandlerRadio(e);
+          }}
+        />
+        <label for="set-roll" className="new-roll-label">
+          Start a roll with shot count
+        </label>
+        <input
+          className="new-input"
           value={Number(shotCount)}
           onChange={(e) => changeHandler(e, setShotCount)}
         />
-        <SubmitButton text="New Roll" onClick={setupRoll} />
       </div>
+      <SubmitButton text="New Roll" onClick={(e) => newRoll(e)} />
     </div>
   );
 };

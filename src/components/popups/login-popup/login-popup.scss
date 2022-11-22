@@ -1,14 +1,13 @@
 @import '../../../sassStyles/main.scss';
 
-.roll-name-input {
-    margin-top: 10px;
-    width: 250px;
+.login-content {
+    height: 60%;
 }
 
-.login-button {
-    width: 80px;
-    font-weight: bolder;
-    cursor: pointer;
+.login-input {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 250px;
 }
 
 .bottom-prompt {
@@ -24,4 +23,3 @@
     color: $backgroundColorSecondary;
     font-weight: bold;
 }
-

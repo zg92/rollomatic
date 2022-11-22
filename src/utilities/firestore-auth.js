@@ -18,7 +18,11 @@ export const createUser = async (email, password) => {
 
 export const loginUser = async (email, password) => {
   if (!email || !password) return;
-  return await signInWithEmailAndPassword(auth, email, password);
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+  } catch (e) {
+    return e;
+  }
 };
 
 export const onAuthStateChangedListener = (callback) => {

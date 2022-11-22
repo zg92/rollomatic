@@ -19,19 +19,16 @@ const SavePopup = () => {
   };
 
   return (
-    <div className="popup-content">
-      <div className="popup-title">
-        <h2>Save Your Roll</h2>
-      </div>
-      <div className="roll-options-row save-wrapper">
+    <div className="popup-content save-content">
+      <div className="roll-options-row ">
         <div className="popup-text"> Enter a name and save your roll!</div>
         <input
-          className="roll-name-input"
+          className="save-input"
           value={rollName}
           onChange={(e) => changeHandler(e, setRollName)}
         />
-        <SubmitButton text="Save" onClick={submitRoll} />
       </div>
+      <SubmitButton text="Save" onClick={submitRoll} />
     </div>
   );
 };

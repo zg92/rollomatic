@@ -1,7 +1,23 @@
-.shot-count-input {
-    width: 2rem;
+.new-content {
+    height: 50%;
 }
 
-.new-wrapper {
-    height: 50%;
+.new-input-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 90%;
+}
+
+.new-roll-radio {
+    cursor: pointer;
+}
+
+.new-roll-label {
+    margin-left: 5%;
+}
+
+.new-input {
+    width: 2rem;
+    margin-left: 10%;
 }

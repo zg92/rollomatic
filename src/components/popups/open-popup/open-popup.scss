@@ -1,11 +1,24 @@
 @import '../../../sassStyles/main.scss';
 
+.open-content {
+    overflow: auto;
+    height: 50%;
+    width: 90%;
+}
+
+.saved-rolls-list {
+    width: 100%;
+}
+
 .saved-roll-line-item-wrapper {
     display: flex;
     flex-direction: row;
-    width: 60vw;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 10px;
+}
+
+.saved-roll-line-item-data {
+    width: 50%;
 }
 
 .saved-roll-line-item-wrapper:hover {

@@ -27,14 +27,11 @@ const SignUpPopup = () => {
   };
 
   return (
-    <div className="popup-content">
-      <div className="popup-title">
-        <h2>Signup For An Account</h2>
-      </div>
-      <div className="roll-options-row signup-wrapper">
+    <div className="popup-content signup-content">
+      <div className="roll-options-row ">
         <div className="popup-text">Email</div>
         <input
-          className="roll-name-input"
+          className="signup-input"
           value={usernameInput}
           type="text"
           onChange={(e) => changeHandler(e, setUsernameInput)}
@@ -42,7 +39,7 @@ const SignUpPopup = () => {
 
         <div className="popup-text"> Password</div>
         <input
-          className="roll-name-input "
+          className="signup-input"
           value={passwordInput}
           type="password"
           onChange={(e) => changeHandler(e, setPasswordInput)}
@@ -50,13 +47,13 @@ const SignUpPopup = () => {
 
         <div className="popup-text"> Confirm Password</div>
         <input
-          className="roll-name-input "
+          className="signup-input"
           value={passwordInputConfirm}
           type="password"
           onChange={(e) => changeHandler(e, setPasswordInputConfirm)}
         />
-        <SubmitButton text="Sign Up" onClick={() => submitCreateUser()} />
       </div>
+      <SubmitButton text="Sign Up" onClick={() => submitCreateUser()} />
 
       <div className="bottom-prompt">
         Already Have an Account?

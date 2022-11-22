@@ -1,5 +1,5 @@
 import "./navbar.scss";
-import Logo from "../../../src/logo.png";
+import Logo from "../assets/logo.png";
 import { useContext } from "react";
 import { ShotMenuContext } from "../../context/shot-menu.context";
 import { PopUpContext } from "../../context/popup-context";
@@ -23,6 +23,11 @@ const Navbar = () => {
     }
   };
 
+  const logout = () => {
+    logoutUser();
+    setOpenPopUp("");
+  };
+
   return (
     <nav className="menu-bar">
       <div className="navbar-logo-wrapper">
@@ -44,7 +49,7 @@ const Navbar = () => {
             <a className="navbar-link" onClick={() => activatePopup("open")}>
               Open
             </a>
-            <a className="navbar-link" onClick={logoutUser}>
+            <a className="navbar-link" onClick={logout}>
               Logout
             </a>
           </>

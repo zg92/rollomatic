@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { changeHandler } from "../../../utilities/changeHandler";
 import "./login-popup.scss";
 import {} from "../../../utilities/firestore-save";
@@ -15,19 +15,19 @@ const LoginPopup = () => {
 
   const login = async () => {
     loginUser(usernameInput, passwordInput);
-    setUsernameInput("");
     setPasswordInput("");
   };
 
+  useEffect(() => {
+    if (user) setOpenPopUp("");
+  }, [user]);
+
   return (
-    <div className="popup-content">
-      <div className="popup-title">
-        <h2>Login to your account</h2>
-      </div>
+    <div className="popup-content login-content">
       <div className="roll-options-row">
         <div className="popup-text">Email</div>
         <input
-          className="roll-name-input"
+          className="login-input"
           value={usernameInput}
           type="text"
           onChange={(e) => changeHandler(e, setUsernameInput)}
@@ -36,7 +36,7 @@ const LoginPopup = () => {
       <div className="roll-options-row">
         <div className="popup-text"> Password</div>
         <input
-          className="roll-name-input"
+          className="login-input"
           value={passwordInput}
           type="password"
           onChange={(e) => changeHandler(e, setPasswordInput)}

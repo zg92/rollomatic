@@ -36,11 +36,7 @@ const OpenPopup = () => {
   }, []);
 
   return (
-    <>
-      <div className="popup-title">
-        <h2>Select a Roll to Open</h2>
-      </div>
-      <div className="popup-text">Click on a roll below to open it</div>
+    <div className="popup-content open-content">
       <div className="saved-rolls-list">
         {rollData.map((i, index) => (
           <div
@@ -49,15 +45,15 @@ const OpenPopup = () => {
             key={index}
           >
             <div className="saved-roll-line-item-data">
-              Name: {i.metaData.rollName}
+              <b>Name:</b> <i>{i.metaData.rollName}</i>
             </div>
             <div className="saved-roll-line-item-data">
-              Date: {i.metaData.date}{" "}
+              <b>Date:</b> <i>{i.metaData.date}</i>
             </div>
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
