@@ -25,3 +25,10 @@
     font-weight: bolder;
     cursor: pointer;
 }
+
+.saved-roll-warning-wrapper {
+    width: 100%;
+    @include flex(row, center, false);
+    margin-top: 10%;
+
+}

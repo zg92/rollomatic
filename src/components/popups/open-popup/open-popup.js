@@ -4,6 +4,7 @@ import { getRolls } from "../../../utilities/firestore-save";
 import { UserContext } from "../../../context/user.context";
 import { ShotMenuContext } from "../../../context/shot-menu.context";
 import { PopUpContext } from "../../../context/popup-context";
+import { Warning } from "../../../utilities/inputUtilities";
 
 const OpenPopup = () => {
   const { user } = useContext(UserContext);
@@ -18,6 +19,7 @@ const OpenPopup = () => {
     const dataArray = [];
     currentRollData.forEach((dataItem) => dataArray.push(dataItem.data()));
     setRollData(dataArray);
+    console.log(rollData.length);
   };
 
   // gets roll data for use in parsing function
@@ -41,20 +43,26 @@ const OpenPopup = () => {
   return (
     <div className="popup-content open-content">
       <div className="saved-rolls-list">
-        {rollData.map((i, index) => (
-          <div
-            className="saved-roll-line-item-wrapper"
-            onClick={() => openRoll(index)}
-            key={index}
-          >
-            <div className="saved-roll-line-item-data">
-              <b>Name:</b> <i>{i.metaData.rollName}</i>
+        {rollData.length > 0 ? (
+          rollData.map((i, index) => (
+            <div
+              className="saved-roll-line-item-wrapper"
+              onClick={() => openRoll(index)}
+              key={index}
+            >
+              <div className="saved-roll-line-item-data">
+                <b>Name:</b> <i>{i.metaData.rollName}</i>
+              </div>
+              <div className="saved-roll-line-item-data">
+                <b>Date:</b> <i>{i.metaData.date}</i>
+              </div>
             </div>
-            <div className="saved-roll-line-item-data">
-              <b>Date:</b> <i>{i.metaData.date}</i>
-            </div>
+          ))
+        ) : (
+          <div className="saved-roll-warning-wrapper">
+            <Warning warningType="noSaves" />
           </div>
-        ))}
+        )}
       </div>
     </div>
   );

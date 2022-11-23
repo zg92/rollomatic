@@ -2,7 +2,7 @@ export const changeHandler = (e, setter) => {
   setter(e.target.value);
 };
 
-export const Warning = ({ warningType, firebaseMessage }) => {
+export const Warning = ({ warningType }) => {
   const warningObject = {
     noUsername: "You must enter a email",
     noPassword: "You must enter a password",
@@ -12,6 +12,7 @@ export const Warning = ({ warningType, firebaseMessage }) => {
     customRollLessThanOne: "You must enter a shot count greater than 0",
     noPasswordMatch: "Your passwords did not match",
     selectNewOption: "You must select an option for your new roll",
+    noSaves: "You have no rolls saved",
   };
 
   return (
