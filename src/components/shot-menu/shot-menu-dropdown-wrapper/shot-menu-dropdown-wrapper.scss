@@ -1,22 +1,19 @@
+@import '../../../sassStyles/main.scss';
+
 .dropdown-wrapper {
-    display: flex;
-    justify-content: space-around;    
-    align-items: center;
-    flex-direction: row;
+    @include flex(row, space-around, true);
     width: 100%;
 }
 
 .dropdown-shot-number-wrapper {
     font-weight: bolder;
     width: 5%;
-    display: flex;
-    justify-content: center;
     margin-left: 5px;
+    @include flex(row, center, false);
+
 }
 
 .dropdown-settings-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    @include flex(row, center, false);
     width: 95%;
-} 
+}

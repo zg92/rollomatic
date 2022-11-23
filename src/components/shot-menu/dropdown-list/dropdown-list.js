@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { ShotMenuContext } from "../../../context/shot-menu.context";
 import "./dropdown-list.scss";
 

@@ -1,15 +1,13 @@
-@import '../../../sassStyles/variables.scss';
+@import '../../../sassStyles/main.scss';
 
 .menu-line-wrapper {
-    display: flex;
-    flex-direction: column;
+    @include flex(column, center, false);
     margin-top: 10px;
     width: 100%;
 }
 
 .line-data-wrapper {
-    display: flex;
-    flex-direction: row;
+    @include flex(row, center, false);
     margin-bottom: .5rem;
 }
 
@@ -17,8 +15,7 @@
     height: 50px;
     width: 80%;
     background: $backgroundColorBlank;
-    display: flex;
-    flex-direction: row;
+    @include flex(row, center, false);
     border: $borderDefault $accentColor;
     border-radius: $borderRadiusDefaultMoreRound;
     box-shadow: $boxShadowDefault;
@@ -26,13 +23,10 @@
 
 .line-button-wrapper {
     width: 20%;
-    display: flex;
-    justify-content: center;
+    @include flex(row, center, true);
 }
 
 .add-remove-menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
+    @include flex(row, space-evenly, false);
+    width: 100px;
 }

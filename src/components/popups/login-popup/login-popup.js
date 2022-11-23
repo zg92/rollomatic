@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import { changeHandler } from "../../../utilities/changeHandler";
+import { changeHandler, Warning } from "../../../utilities/inputUtilities";
 import "./login-popup.scss";
-import {} from "../../../utilities/firestore-save";
 import { loginUser } from "../../../utilities/firestore-auth";
 import { PopUpContext } from "../../../context/popup-context";
 import SubmitButton from "../../button-components/submit-button/submit-button";
@@ -11,19 +10,32 @@ const LoginPopup = () => {
   const [usernameInput, setUsernameInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const { setOpenPopUp } = useContext(PopUpContext);
+  const [warningMessage, setWarningMessage] = useState();
   const { user } = useContext(UserContext);
 
   const login = async () => {
-    loginUser(usernameInput, passwordInput);
-    setPasswordInput("");
+    if (usernameInput === "") {
+      setWarningMessage("noUsername");
+    }
+    if (passwordInput === "") {
+      setWarningMessage("noPassword");
+    }
+    if (usernameInput === "" && passwordInput === "") {
+      setWarningMessage("noUsernameOrPassword");
+    } else {
+      loginUser(usernameInput, passwordInput);
+      setPasswordInput("");
+    }
   };
 
+  // closes popup if user is logged in
   useEffect(() => {
     if (user) setOpenPopUp("");
   }, [user]);
 
   return (
     <div className="popup-content login-content">
+      <Warning warningType={warningMessage} />
       <div className="roll-options-row">
         <div className="popup-text">Email</div>
         <input

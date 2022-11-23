@@ -12,6 +12,7 @@ const OpenPopup = () => {
   const { setOpenPopUp } = useContext(PopUpContext);
   const [rollData, setRollData] = useState([]);
 
+  // de-nests retrieved firebase data for use in rendering options to the user
   const getRollData = async () => {
     const currentRollData = await getRolls(user.uid);
     const dataArray = [];
@@ -19,6 +20,12 @@ const OpenPopup = () => {
     setRollData(dataArray);
   };
 
+  // gets roll data for use in parsing function
+  useEffect(() => {
+    getRollData();
+  }, []);
+
+  // returns specific roll data based on selection from popup
   const openRoll = (index) => {
     setShotsList(rollData[index]["rollData"]);
     setRollSettings({
@@ -30,10 +37,6 @@ const OpenPopup = () => {
     });
     setOpenPopUp("");
   };
-
-  useEffect(() => {
-    getRollData();
-  }, []);
 
   return (
     <div className="popup-content open-content">

@@ -11,23 +11,18 @@
 }
 
 .dropdown-list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex(column, center, true);
     width: 100%;
 }
 
 .dropdown-list-item {
     font-size: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 110%;
+    @include flex(row, center, true);
 }
 
 .dropdown-list-item:hover {
     cursor: pointer;
     background: $backgroundColorSecondary;
-    
+
 }

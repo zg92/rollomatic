@@ -1,12 +1,11 @@
+@import '../../../sassStyles/main.scss';
+
 .dropdown-wrapper {
-    display: flex;
-    flex-direction: row;
+    @include flex(row, space-around, false);
 }
 
 .dropdown-group {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
+    @include flex(row, left, false);
     margin: 10px;
 }
 

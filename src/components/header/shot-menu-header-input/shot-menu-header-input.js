@@ -7,7 +7,6 @@ const ShotMenuHeaderInput = ({ category }) => {
   const { rollSettings, setRollSettings } = useContext(ShotMenuContext);
 
   const handleChanges = (e) => {
-    console.log(rollSettings);
     setRollSettings({
       ...rollSettings,
       rollSettingsInput: {
@@ -15,6 +14,20 @@ const ShotMenuHeaderInput = ({ category }) => {
         [category]: e.target.value,
       },
     });
+  };
+
+  // This function makes it easier to populate data if a user tries to save
+  // and gets the 'Data is Missing!' warning by clearing the input console
+  const clearData = () => {
+    if (rollSettings["rollSettingsInput"][category] === "Data is missing!") {
+      setRollSettings({
+        ...rollSettings,
+        rollSettingsInput: {
+          ...rollSettings["rollSettingsInput"],
+          [category]: "",
+        },
+      });
+    }
   };
 
   return (
@@ -28,6 +41,7 @@ const ShotMenuHeaderInput = ({ category }) => {
               type="text"
               value={rollSettings["rollSettingsInput"][category]}
               onChange={(e) => handleChanges(e)}
+              onClick={clearData}
               className="input-console"
             />
             <Button buttonType="checkRollData" category={category} />

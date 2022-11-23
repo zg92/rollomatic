@@ -11,8 +11,7 @@
 }
 
 .bottom-prompt {
-    display: flex;
-    flex-direction: row;
+    @include flex(row, center, false);
     margin-top: 1em;
 }
 

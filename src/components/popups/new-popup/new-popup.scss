@@ -1,11 +1,11 @@
+@import '../../../sassStyles/main.scss';
+
 .new-content {
     height: 50%;
 }
 
 .new-input-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
+    @include flex(row, left, false);
     width: 90%;
 }
 

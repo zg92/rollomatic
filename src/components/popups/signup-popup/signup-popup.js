@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { changeHandler } from "../../../utilities/changeHandler";
+import { changeHandler, Warning } from "../../../utilities/inputUtilities";
 import "./signup-popup.scss";
 import { createUser } from "../../../utilities/firestore-auth";
 import { PopUpContext } from "../../../context/popup-context";
@@ -9,25 +9,36 @@ const SignUpPopup = () => {
   const [usernameInput, setUsernameInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const [passwordInputConfirm, setPasswordInputConfirm] = useState("");
+  const [warningMessage, setWarningMessage] = useState();
   const { setOpenPopUp } = useContext(PopUpContext);
 
   const submitCreateUser = async () => {
-    if (passwordInput === passwordInputConfirm) {
+    if (passwordInputConfirm === "") {
+      setWarningMessage("noConfirmPassword");
+    }
+    if (passwordInput === "") {
+      setWarningMessage("noPassword");
+    }
+    if (usernameInput === "") {
+      setWarningMessage("noUsername");
+    }
+    if (passwordInput !== passwordInputConfirm) {
+      setWarningMessage("noPasswordMatch");
+    } else {
       try {
         await createUser(usernameInput, passwordInput);
         setOpenPopUp("");
       } catch (e) {
         console.log(e);
       }
-    } else {
-      console.warning("passwords must match");
+      setPasswordInput("");
+      setPasswordInputConfirm("");
     }
-    setPasswordInput("");
-    setPasswordInputConfirm("");
   };
 
   return (
     <div className="popup-content signup-content">
+      <Warning warningType={warningMessage} />
       <div className="roll-options-row ">
         <div className="popup-text">Email</div>
         <input

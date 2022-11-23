@@ -2,9 +2,7 @@
 
 .header-wrapper {
     background: $backgroundColorBlank;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    @include flex(row, space-evenly, true);
     border: $borderDefault $accentColor;
     height: 10%;
     min-height: 125px;
@@ -15,14 +13,11 @@
 }
 
 .header-items {
-    align-items: center;
     width: 100%;
-    display: flex;
-    flex-direction: column;
     height: fit-content;
+    @include flex(column, center, true);
 }
 
 .header-inputs {
-    display: flex;
-    flex-direction: column;
+    @include flex(column, center, false);
 }

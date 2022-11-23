@@ -3,10 +3,7 @@
 .menu-bar {
     width: 100%;
     z-index: 2;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(row, space-between, true);
     height: 80px;
     position: fixed;
     background: $backgroundColorSecondary;
@@ -15,16 +12,14 @@
 }
 
 .navbar-logo-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(row, center, true);
     height: 80%;
 }
 
 .navbar-links {
     width: 400px;
-    display: flex;
-    justify-content: space-around;
+    @include flex(row, space-around, false);
+
 }
 
 .navbar-link {

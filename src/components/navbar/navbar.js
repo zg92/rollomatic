@@ -8,7 +8,7 @@ import { UserContext } from "../../context/user.context";
 import Logo from "../assets/logo/logo";
 
 const Navbar = () => {
-  const { setShotsList, rollSettings } = useContext(ShotMenuContext);
+  const { rollSettings, setRollSettings } = useContext(ShotMenuContext);
   const { openPopUp, setOpenPopUp } = useContext(PopUpContext);
   const { user } = useContext(UserContext);
 
@@ -26,7 +26,14 @@ const Navbar = () => {
 
   const saveCheck = () => {
     if (rollSettings["film-stock"] === "" || rollSettings["iso"] === "") {
-      return;
+      setRollSettings({
+        ...rollSettings,
+        rollSettingsInput: {
+          ...rollSettings["rollSettingsInput"],
+          "film-stock": "Data is missing!",
+          iso: "Data is missing!",
+        },
+      });
     } else {
       activatePopup("save");
     }

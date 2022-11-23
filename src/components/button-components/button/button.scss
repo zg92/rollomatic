@@ -1,15 +1,14 @@
+@import '../../../sassStyles/main.scss';
+
 .button-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex(row, center, true);
 }
 
 .button-icon {
     width: 31px;
     height: 31px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 50%;
-    cursor:pointer;
+    cursor: pointer;
+    @include flex(row, center, true);
+
 }

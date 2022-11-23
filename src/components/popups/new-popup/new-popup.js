@@ -1,14 +1,14 @@
 import { useContext, useState } from "react";
 import "./new-popup.scss";
 import { ShotMenuContext } from "../../../context/shot-menu.context";
-import { changeHandler } from "../../../utilities/changeHandler";
+import { changeHandler, Warning } from "../../../utilities/inputUtilities";
 import { PopUpContext } from "../../../context/popup-context";
 import SubmitButton from "../../button-components/submit-button/submit-button";
 
 const NewPopup = () => {
-  const [shotCount, setShotCount] = useState(Number);
+  const [shotCount, setShotCount] = useState(1);
   const [radioSelection, setRadioSelection] = useState();
-
+  const [warningMessage, setWarningMessage] = useState();
   const { setShotsList, setRollSettings, rollSettings } =
     useContext(ShotMenuContext);
   const { setOpenPopUp } = useContext(PopUpContext);
@@ -18,8 +18,16 @@ const NewPopup = () => {
   };
 
   const newRoll = () => {
+    console.log(radioSelection);
+    if (radioSelection === undefined) {
+      setWarningMessage("selectNewOption");
+    }
     if (radioSelection === "blank") {
       resetList();
+    }
+    if (shotCount < 1) {
+      setWarningMessage("customRollLessThanOne");
+      return;
     }
 
     if (radioSelection === "set") {
@@ -34,7 +42,6 @@ const NewPopup = () => {
       "completed-film-stock": false,
       "completed-iso": false,
     });
-    console.log(rollSettings);
   };
 
   const resetList = async () => {
@@ -69,6 +76,7 @@ const NewPopup = () => {
 
   return (
     <div className="popup-content new-content">
+      <Warning warningType={warningMessage} />
       <div className="roll-options-row new-input-row">
         <input
           type="radio"
@@ -79,7 +87,7 @@ const NewPopup = () => {
             changeHandlerRadio(e);
           }}
         />
-        <label for="set-roll" className="new-roll-label">
+        <label htmlFor="set-roll" className="new-roll-label">
           Start a blank roll
         </label>
       </div>
@@ -93,7 +101,7 @@ const NewPopup = () => {
             changeHandlerRadio(e);
           }}
         />
-        <label for="set-roll" className="new-roll-label">
+        <label htmlFor="set-roll" className="new-roll-label">
           Start a roll with shot count
         </label>
         <input
