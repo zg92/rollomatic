@@ -5,6 +5,7 @@ import { UserContext } from "../../../context/user.context";
 import { ShotMenuContext } from "../../../context/shot-menu.context";
 import { PopUpContext } from "../../../context/popup-context";
 import { Warning } from "../../../utilities/inputUtilities";
+import ShotDelete from "../../button-components/shot-delete/shot-delete";
 
 const OpenPopup = () => {
   const { user } = useContext(UserContext);
@@ -56,6 +57,7 @@ const OpenPopup = () => {
               <div className="saved-roll-line-item-data">
                 <b>Date:</b> <i>{i.metaData.date}</i>
               </div>
+              <ShotDelete rollName={i.metaData.rollName} user={user.uid} />
             </div>
           ))
         ) : (

@@ -5,6 +5,7 @@ import {
   collection,
   setDoc,
   getDocs,
+  deleteDoc,
 } from "firebase/firestore";
 import { firebaseConfig } from "./admin-firebase";
 
@@ -33,7 +34,7 @@ export const saveRoll = async (user, rollName, rollSettings, shotsList) => {
   try {
     await setDoc(doc(userDocRef, "rolls", rollName), structuredData);
   } catch (e) {
-    console.log("Error adding document", e);
+    console.warning("Error adding document", e);
   }
 };
 
@@ -42,6 +43,11 @@ export const getRolls = async (user) => {
   try {
     return await getDocs(userDocRef);
   } catch (e) {
-    console.log(e);
+    console.warning("Error getting documents", e);
   }
+};
+
+export const deleteRoll = async (rollName, user) => {
+  const userDocRef = doc(db, "users", user);
+  await deleteDoc(doc(userDocRef, "rolls", rollName));
 };
