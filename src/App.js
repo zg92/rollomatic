@@ -15,11 +15,23 @@ import OpenPopup from "./components/popups/open-popup/open-popup";
 
 function App() {
   const { openShotSettingMenu } = useContext(ShotMenuContext);
-  const { openPopUp } = useContext(PopUpContext);
+  const { openPopUp, blur } = useContext(PopUpContext);
+
+  console.log(blur);
 
   return (
     <div className="App">
       <Navbar />
+      <div
+        className="blur"
+        style={
+          blur === true
+            ? {
+                backdropFilter: "blur(3px)",
+              }
+            : { backdropFilter: "blur(0px)", zIndex: "-1" }
+        }
+      />
       <div className="app-wrapper">
         <ShotMenuHeader />
         <ShotMenuWrapper />
@@ -43,6 +55,7 @@ function App() {
         <PopUp type={<SignUpPopup />} title="Signup For an Account" />
       ) : null}
     </div>
+    // </div>
   );
 }
 

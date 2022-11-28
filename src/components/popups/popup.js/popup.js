@@ -11,16 +11,14 @@ const PopUp = ({ type, title }) => {
   };
 
   return (
-    <div className="popup-background-blur">
-      <div className="popup-wrapper">
-        <div className="exit-out">
-          <HiX className="x" onClick={closePopup} size={20} />
-        </div>
-        <div className="popup-title">
-          <h2>{title}</h2>
-        </div>
-        {type}
+    <div className="popup-wrapper">
+      <div className="exit-out">
+        <HiX className="x" onClick={closePopup} size={20} />
       </div>
+      <div className="popup-title">
+        <h2>{title}</h2>
+      </div>
+      {type}
     </div>
   );
 };

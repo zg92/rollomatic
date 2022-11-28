@@ -6,7 +6,20 @@
 
 }
 
+.blur {
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+
+}
+
 .app-wrapper {
   @include flex(column, top, true);
   margin-top: 90px;
+  z-index: 0;
+  position: relative;
 }
