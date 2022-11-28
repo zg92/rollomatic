@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
 import "./new-popup.scss";
 import { ShotMenuContext } from "../../../context/shot-menu.context";
-import { changeHandler, Warning } from "../../../utilities/inputUtilities";
+import { changeHandler, Warning } from "../../input-components/input-component";
 import { PopUpContext } from "../../../context/popup-context";
 import SubmitButton from "../../button-components/submit-button/submit-button";
-import { RadioButton } from "../../../utilities/radioUtilities";
+import { RadioButton } from "../../input-components/radio-component";
 
 const NewPopup = () => {
   const [shotCount, setShotCount] = useState(1);

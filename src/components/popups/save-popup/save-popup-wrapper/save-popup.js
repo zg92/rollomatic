@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import "./save-popup.scss";
 import { saveRoll, updateRoll } from "../../../../utilities/firestore-save";
 import { ShotMenuContext } from "../../../../context/shot-menu.context";
-import { Warning } from "../../../../utilities/inputUtilities";
+import { Warning } from "../../../../components/input-components/input-component";
 import { UserContext } from "../../../../context/user.context";
 import { PopUpContext } from "../../../../context/popup-context";
 import SubmitButton from "../../../button-components/submit-button/submit-button";

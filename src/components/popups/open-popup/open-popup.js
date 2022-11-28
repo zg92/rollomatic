@@ -4,7 +4,7 @@ import { getRolls } from "../../../utilities/firestore-save";
 import { UserContext } from "../../../context/user.context";
 import { ShotMenuContext } from "../../../context/shot-menu.context";
 import { PopUpContext } from "../../../context/popup-context";
-import { Warning } from "../../../utilities/inputUtilities";
+import { Warning } from "../../../components/input-components/input-component";
 import ShotDelete from "../../button-components/shot-delete/shot-delete";
 
 const OpenPopup = () => {

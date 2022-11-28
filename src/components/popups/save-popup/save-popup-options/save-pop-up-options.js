@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ShotMenuContext } from "../../../../context/shot-menu.context";
-import { changeHandler } from "../../../../utilities/inputUtilities";
-import { RadioButton } from "../../../../utilities/radioUtilities";
+import { changeHandler } from "../../../input-components/input-component";
+import { RadioButton } from "../../../input-components/radio-component";
 import "./save-pop-up-options.scss";
 
 const SavePopUpOptions = ({

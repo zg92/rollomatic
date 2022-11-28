@@ -1,5 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import { changeHandler, Warning } from "../../../utilities/inputUtilities";
+import {
+  changeHandler,
+  Warning,
+} from "../../../components/input-components/input-component";
 import "./login-popup.scss";
 import { loginUser } from "../../../utilities/firestore-auth";
 import { PopUpContext } from "../../../context/popup-context";
