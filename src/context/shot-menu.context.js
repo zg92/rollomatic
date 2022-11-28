@@ -12,6 +12,8 @@ export const ShotMenuContextProvider = ({ children }) => {
     rollname: null,
   });
 
+  const [openSave, setOpenSave] = useState("");
+
   const [shotsList, setShotsList] = useState([
     {
       position: 0,
@@ -33,6 +35,8 @@ export const ShotMenuContextProvider = ({ children }) => {
     setOpenShotSettingMenu,
     rollSettings,
     setRollSettings,
+    openSave,
+    setOpenSave,
   };
 
   return (

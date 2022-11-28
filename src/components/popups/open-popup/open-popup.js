@@ -9,8 +9,14 @@ import ShotDelete from "../../button-components/shot-delete/shot-delete";
 
 const OpenPopup = () => {
   const { user } = useContext(UserContext);
-  const { setShotsList, setRollSettings, rollSettings } =
-    useContext(ShotMenuContext);
+  const {
+    setShotsList,
+    setRollSettings,
+    rollSettings,
+    setOpenShotSettingMenu,
+    setOpenSave,
+    openSave,
+  } = useContext(ShotMenuContext);
   const { setOpenPopUp } = useContext(PopUpContext);
   const [rollData, setRollData] = useState([]);
 
@@ -20,7 +26,7 @@ const OpenPopup = () => {
     const dataArray = [];
     currentRollData.forEach((dataItem) => dataArray.push(dataItem.data()));
     setRollData(dataArray);
-    console.log(rollData.length);
+    setOpenShotSettingMenu({ position: null, dropdownType: null });
   };
 
   // gets roll data for use in parsing function
@@ -39,6 +45,7 @@ const OpenPopup = () => {
       "completed-iso": true,
     });
     setOpenPopUp("");
+    setOpenSave(rollData[index]["metaData"]["rollName"]);
   };
 
   return (
@@ -52,10 +59,11 @@ const OpenPopup = () => {
               key={index}
             >
               <div className="saved-roll-line-item-data">
-                <b>Name:</b> <i>{i.metaData.rollName}</i>
+                <b>Name:</b>{" "}
+                <i className="metadata-name">{i.metaData.rollName}</i>
               </div>
               <div className="saved-roll-line-item-data">
-                <b>Date:</b> <i>{i.metaData.date}</i>
+                <b>Date:</b> <i className="metadata-name">{i.metaData.date}</i>
               </div>
               <ShotDelete rollName={i.metaData.rollName} user={user.uid} />
             </div>

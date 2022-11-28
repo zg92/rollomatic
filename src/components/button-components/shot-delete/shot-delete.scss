@@ -1,11 +1,11 @@
 @import '../../../sassStyles/main.scss';
 
-.remove-button {
+.delete-button {
     background: $accentColor;
     color: $fontWhite;
 }
 
-.remove-button:hover {
+.delete-button:hover {
     background: $fontWhite;
     color: $accentColor;
     border: 2px solid black;

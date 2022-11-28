@@ -14,7 +14,7 @@ const PopUp = ({ type, title }) => {
     <div className="popup-background-blur">
       <div className="popup-wrapper">
         <div className="exit-out">
-          <HiX className="x" onClick={closePopup} />
+          <HiX className="x" onClick={closePopup} size={20} />
         </div>
         <div className="popup-title">
           <h2>{title}</h2>

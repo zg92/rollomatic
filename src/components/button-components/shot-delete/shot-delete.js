@@ -15,7 +15,7 @@ const ShotDelete = ({ rollName, user }) => {
 
   return (
     <div
-      className="button-icon remove-button"
+      className="button-icon delete-button"
       onClick={() => removeRoll(rollName, user)}
     >
       <HiTrash />

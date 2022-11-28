@@ -5,7 +5,7 @@ import DropdownList from "./components/shot-menu/dropdown-list/dropdown-list";
 import ShotMenuWrapper from "./components/shot-menu/shot-menu-wrapper/shot-menu-wrapper";
 import { ShotMenuContext } from "./context/shot-menu.context";
 import Navbar from "./components/navbar/navbar";
-import SavePopup from "./components/popups/save-popup/save-popup";
+import SavePopup from "./components/popups/save-popup/save-popup-wrapper/save-popup";
 import { PopUpContext } from "./context/popup-context";
 import LoginPopup from "./components/popups/login-popup/login-popup";
 import PopUp from "./components/popups/popup.js/popup";

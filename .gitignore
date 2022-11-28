@@ -23,3 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 admin-firebase.js
+
+#compiled sass
+**.css
+**.css.map

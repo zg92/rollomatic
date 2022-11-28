@@ -6,6 +6,7 @@ import {
   setDoc,
   getDocs,
   deleteDoc,
+  updateDoc,
 } from "firebase/firestore";
 import { firebaseConfig } from "./admin-firebase";
 
@@ -45,6 +46,25 @@ export const getRolls = async (user) => {
   } catch (e) {
     console.warning("Error getting documents", e);
   }
+};
+
+export const updateRoll = async (user, rollName, rollSettings, shotsList) => {
+  const userDocRef = doc(db, "users", user, "rolls", rollName);
+  console.log(userDocRef);
+  try {
+    await updateDoc(userDocRef, {
+      metaData: {
+        rollName: rollName,
+        date: getDate(),
+        filmStock: rollSettings["film-stock"],
+        iso: rollSettings.iso,
+      },
+      rollData: [...shotsList],
+    });
+  } catch (e) {
+    console.log("Error updating document", e);
+  }
+  console.log("done!");
 };
 
 export const deleteRoll = async (rollName, user) => {

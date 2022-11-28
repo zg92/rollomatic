@@ -4,26 +4,23 @@ import { ShotMenuContext } from "../../../context/shot-menu.context";
 import { changeHandler, Warning } from "../../../utilities/inputUtilities";
 import { PopUpContext } from "../../../context/popup-context";
 import SubmitButton from "../../button-components/submit-button/submit-button";
+import { RadioButton } from "../../../utilities/radioUtilities";
 
 const NewPopup = () => {
   const [shotCount, setShotCount] = useState(1);
   const [radioSelection, setRadioSelection] = useState();
   const [warningMessage, setWarningMessage] = useState();
-  const { setShotsList, setRollSettings, rollSettings } =
+  const { setShotsList, setRollSettings, rollSettings, setOpenSave } =
     useContext(ShotMenuContext);
   const { setOpenPopUp } = useContext(PopUpContext);
 
-  const changeHandlerRadio = (e) => {
-    setRadioSelection(e.target.value);
-  };
-
   const newRoll = () => {
-    console.log(radioSelection);
     if (radioSelection === undefined) {
       setWarningMessage("selectNewOption");
     }
     if (radioSelection === "blank") {
       resetList();
+      setOpenSave("");
     }
     if (shotCount < 1) {
       setWarningMessage("customRollLessThanOne");
@@ -32,6 +29,7 @@ const NewPopup = () => {
 
     if (radioSelection === "set") {
       setupRoll();
+      setOpenSave("");
     }
   };
 
@@ -78,32 +76,23 @@ const NewPopup = () => {
     <div className="popup-content new-content">
       <Warning warningType={warningMessage} />
       <div className="roll-options-row new-input-row">
-        <input
-          type="radio"
-          name="set-roll"
-          value="blank"
-          className="new-roll-radio"
-          onChange={(e) => {
-            changeHandlerRadio(e);
-          }}
+        <RadioButton
+          radioName={"set-roll"}
+          radioValue={"blank"}
+          setter={setRadioSelection}
+          className={"new-roll-radio"}
+          label={"Start a blank roll"}
         />
-        <label htmlFor="set-roll" className="new-roll-label">
-          Start a blank roll
-        </label>
       </div>
       <div className="roll-options-row new-input-row">
-        <input
-          type="radio"
-          name="set-roll"
-          value="set"
-          className="new-roll-radio"
-          onChange={(e) => {
-            changeHandlerRadio(e);
-          }}
+        <RadioButton
+          radioName={"set-roll"}
+          radioValue={"set"}
+          input={"Update saved roll"}
+          setter={setRadioSelection}
+          className={"new-roll-radio"}
+          label={"Start a roll with shot count"}
         />
-        <label htmlFor="set-roll" className="new-roll-label">
-          Start a roll with shot count
-        </label>
         <input
           className="new-input"
           value={Number(shotCount)}

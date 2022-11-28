@@ -17,4 +17,10 @@
 .dropdown-result {
     margin-left: .2rem;
     width: 30px;
+    cursor: pointer;
+}
+
+.dropdown-result:hover {
+    color: $backgroundColorSecondary;
+    font-weight: bolder;
 }
