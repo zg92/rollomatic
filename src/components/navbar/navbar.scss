@@ -4,20 +4,21 @@
     width: 100%;
     z-index: 2;
     @include flex(row, space-between, true);
-    height: 80px;
+    height: 5rem;
     position: fixed;
     background: $backgroundColorSecondary;
     top: 0;
     border-bottom: $borderDefault $accentColor;
+    min-width: 360px
 }
 
 .navbar-logo-wrapper {
     @include flex(row, center, true);
-    height: 80%;
+    width: 25%;
 }
 
 .navbar-links {
-    width: 400px;
+    width: 75%;
     @include flex(row, space-around, false);
 
 }

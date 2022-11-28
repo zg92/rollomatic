@@ -47,7 +47,7 @@ const NewPopup = () => {
       {
         position: 0,
         aperture: null,
-        shutterspeed: null,
+        shutter: null,
         lock: false,
       },
     ]);
@@ -62,7 +62,7 @@ const NewPopup = () => {
         {
           position: i,
           aperture: null,
-          shutterspeed: null,
+          shutter: null,
           lock: true,
         }
       )

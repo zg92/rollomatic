@@ -18,7 +18,7 @@ export const ShotMenuContextProvider = ({ children }) => {
     {
       position: 0,
       aperture: null,
-      shutterspeed: null,
+      shutter: null,
       lock: false,
     },
   ]);

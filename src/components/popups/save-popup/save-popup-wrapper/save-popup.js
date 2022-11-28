@@ -16,8 +16,6 @@ const SavePopup = () => {
   const { setOpenPopUp } = useContext(PopUpContext);
   const { user } = useContext(UserContext);
 
-  console.log(openSave);
-
   const submitRoll = async () => {
     if (rollName === "" && radioSelection === "new") {
       setWarningMessage("noRollname");
@@ -31,7 +29,7 @@ const SavePopup = () => {
     if (radioSelection === undefined) {
       setWarningMessage("selectNewOption");
     }
-    if (radioSelection === "new") {
+    if (radioSelection === "new" || openSave === "") {
       await saveRoll(user.uid, rollName, rollSettings, shotsList);
     }
 

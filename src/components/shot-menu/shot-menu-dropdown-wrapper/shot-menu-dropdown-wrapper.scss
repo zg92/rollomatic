@@ -3,12 +3,13 @@
 .dropdown-wrapper {
     @include flex(row, space-around, true);
     width: 100%;
+
 }
 
 .dropdown-shot-number-wrapper {
     font-weight: bolder;
     width: 5%;
-    margin-left: 5px;
+    margin-left: .5rem;
     @include flex(row, center, false);
 
 }

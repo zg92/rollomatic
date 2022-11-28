@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import {
   changeHandler,
   Warning,
@@ -7,6 +7,7 @@ import "./signup-popup.scss";
 import { createUser } from "../../../utilities/firestore-auth";
 import { PopUpContext } from "../../../context/popup-context";
 import SubmitButton from "../../button-components/submit-button/submit-button";
+import { UserContext } from "../../../context/user.context";
 
 const SignUpPopup = () => {
   const [usernameInput, setUsernameInput] = useState("");
@@ -14,11 +15,9 @@ const SignUpPopup = () => {
   const [passwordInputConfirm, setPasswordInputConfirm] = useState("");
   const [warningMessage, setWarningMessage] = useState();
   const { setOpenPopUp } = useContext(PopUpContext);
+  const { user } = useContext(UserContext);
 
   const submitCreateUser = async () => {
-    if (passwordInputConfirm === "") {
-      setWarningMessage("noConfirmPassword");
-    }
     if (passwordInput === "") {
       setWarningMessage("noPassword");
     }
@@ -30,7 +29,6 @@ const SignUpPopup = () => {
     } else {
       try {
         await createUser(usernameInput, passwordInput);
-        setOpenPopUp("");
       } catch (e) {
         console.log(e);
       }
@@ -39,15 +37,19 @@ const SignUpPopup = () => {
     }
   };
 
+  useEffect(() => {
+    if (user) setOpenPopUp("");
+  }, [user]);
+
   return (
     <div className="popup-content signup-content">
       <Warning warningType={warningMessage} />
-      <div className="roll-options-row ">
+      <div className="roll-options-row">
         <div className="popup-text">Email</div>
         <input
           className="signup-input"
           value={usernameInput}
-          type="text"
+          type="email"
           onChange={(e) => changeHandler(e, setUsernameInput)}
         />
 

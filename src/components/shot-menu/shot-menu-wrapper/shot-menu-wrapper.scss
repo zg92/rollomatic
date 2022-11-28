@@ -2,8 +2,8 @@
 
 .menu-line-wrapper {
     @include flex(column, center, false);
-    margin-top: 10px;
-    width: 100%;
+    margin-top: 1rem;
+    width: 23rem;
 }
 
 .line-data-wrapper {
@@ -12,7 +12,7 @@
 }
 
 .shot-menu-wrapper {
-    height: 50px;
+    height: 3.5rem;
     width: 80%;
     background: $backgroundColorBlank;
     @include flex(row, center, false);
@@ -28,5 +28,5 @@
 
 .add-remove-menu {
     @include flex(row, space-evenly, false);
-    width: 100px;
+    width: 5rem;
 }

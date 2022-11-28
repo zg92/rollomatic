@@ -44,7 +44,7 @@ const LoginPopup = () => {
         <input
           className="login-input"
           value={usernameInput}
-          type="text"
+          type="email"
           onChange={(e) => changeHandler(e, setUsernameInput)}
         />
       </div>

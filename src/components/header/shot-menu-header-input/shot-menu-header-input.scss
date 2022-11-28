@@ -1,8 +1,8 @@
 @import '../../../sassStyles/main.scss';
 
 .input-wrapper {
-    width: 350px;
-    height: 40px;
+    width: 22.5rem;
+    height: 2.5rem;
     @include flex(row, space-evenly, true);
 
 }
@@ -10,16 +10,24 @@
 .category-title {
     font-weight: bolder;
     width: 30%;
+    // text-transform: uppercase;
 }
 
 .input-category-input {
-    width: 70%;
+    width: 60%;
+    height: 1rem;
     @include flex(row, space-around, true);
+
 
 }
 
-.input-current,
+.input-current {
+    width: 70%;
+    overflow: hidden;
+}
+
 .input-console {
-    width: 60%;
-    overflow: auto;
+    width: 70%;
+    height: 1.25rem;
+    overflow: hidden;
 }

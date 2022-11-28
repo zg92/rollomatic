@@ -1,8 +1,7 @@
 @import '../../../sassStyles/main.scss';
 
 .logo-wrapper {
-    margin-left: 20px;
-    width: 220px;
+    width: 15rem;
     @include flex(row, center, true);
 }
 
@@ -14,4 +13,10 @@
     color: $fontWhite;
     margin-left: 5%;
     font-family: $logoFont;
+}
+
+@media screen and (max-width:630px) {
+    .logo-text {
+        display: none;
+    }
 }

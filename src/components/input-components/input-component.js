@@ -4,9 +4,8 @@ export const changeHandler = (e, setter) => {
 
 export const Warning = ({ warningType }) => {
   const warningObject = {
-    noUsername: "You must enter a email",
+    noUsername: "You must enter an email",
     noPassword: "You must enter a password",
-    noConfirmPassword: "You must confirm your password",
     noUsernameOrPassword: "You must enter an email and password",
     noRollname: "You must enter a roll name to save",
     customRollLessThanOne: "You must enter a shot count greater than 0",

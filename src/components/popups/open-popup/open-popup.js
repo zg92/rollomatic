@@ -15,7 +15,6 @@ const OpenPopup = () => {
     rollSettings,
     setOpenShotSettingMenu,
     setOpenSave,
-    openSave,
   } = useContext(ShotMenuContext);
   const { setOpenPopUp } = useContext(PopUpContext);
   const [rollData, setRollData] = useState([]);
@@ -43,6 +42,10 @@ const OpenPopup = () => {
       iso: rollData[index]["metaData"].iso,
       "completed-film-stock": true,
       "completed-iso": true,
+      rollSettingsInput: {
+        iso: rollData[index]["metaData"].iso,
+        ["film-stock"]: rollData[index]["metaData"].filmStock,
+      },
     });
     setOpenPopUp("");
     setOpenSave(rollData[index]["metaData"]["rollName"]);

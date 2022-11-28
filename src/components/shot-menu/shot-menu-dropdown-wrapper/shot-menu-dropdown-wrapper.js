@@ -14,8 +14,8 @@ const ShotMenuDropdownWrapper = ({ lineData }) => {
           position={lineData["position"]}
         />
         <ShotMenuDropdown
-          dropdownType={"shutterspeed"}
-          data={lineData["shutterspeed"]}
+          dropdownType={"shutter"}
+          data={lineData["shutter"]}
           position={lineData["position"]}
         />
       </div>

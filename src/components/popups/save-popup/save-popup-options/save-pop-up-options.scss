@@ -2,8 +2,7 @@
 
 
 .save-input {
-    margin-top: 10px;
-    width: 250px;
+    width: 100%;
 }
 
 .save-roll-radio {
@@ -11,8 +10,8 @@
 }
 
 .save-roll-options-wrapper {
-    @include flex(column, center, false);
-    height: 100px;
+    @include flex(column, space-evenly, false);
+    height: 8rem;
 }
 
 .save-roll-option-line {

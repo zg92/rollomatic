@@ -6,17 +6,18 @@
 
 .dropdown-group {
     @include flex(row, left, false);
-    margin: 10px;
+    margin: .5rem;
+    width: 70%;
 }
 
 .dropdown-type {
     font-weight: bolder;
     width: 80%;
+    text-transform: capitalize;
 }
 
 .dropdown-result {
     margin-left: .2rem;
-    width: 30px;
     cursor: pointer;
 }
 

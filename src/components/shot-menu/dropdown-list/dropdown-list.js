@@ -13,7 +13,7 @@ const DropdownList = () => {
 
   const listData = {
     aperture: ["f/2.8", "f/4", "f/5.6", "f/8", "f/11", "f/16", "f/22"],
-    shutterspeed: [
+    shutter: [
       "1000",
       "500",
       "250",
@@ -33,7 +33,7 @@ const DropdownList = () => {
   const closeMenu = (arrayCopy) => {
     if (
       arrayCopy[openShotSettingMenu["position"]]["aperture"] !== null ||
-      arrayCopy[openShotSettingMenu["position"]]["shutterspeed"] !== null
+      arrayCopy[openShotSettingMenu["position"]]["shutter"] !== null
     ) {
       setOpenShotSettingMenu({ position: null });
     }

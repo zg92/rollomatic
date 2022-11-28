@@ -7,7 +7,6 @@ const DropdownAdd = () => {
   const {
     shotsList,
     setShotsList,
-    shotObjectEmpty,
     openShotSettingMenu,
     setOpenShotSettingMenu,
   } = useContext(ShotMenuContext);
@@ -20,7 +19,7 @@ const DropdownAdd = () => {
       {
         position: shotsList.length,
         aperture: null,
-        shutterspeed: null,
+        shutter: null,
         lock: false,
       },
     ]);

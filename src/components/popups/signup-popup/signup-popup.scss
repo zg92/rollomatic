@@ -1,9 +1,12 @@
+@import '../../../sassStyles/main.scss';
+
 .signup-content {
     height: 70%;
+    @include flex(column, space-evenly, false);
 }
 
 .signup-input {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    width: 250px;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    width: 16rem;
 }

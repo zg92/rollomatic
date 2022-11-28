@@ -4,9 +4,7 @@
     background: $backgroundColorBlank;
     @include flex(row, space-evenly, true);
     border: $borderDefault $accentColor;
-    height: 10%;
-    min-height: 125px;
-    width: 100%;
+    min-height: 8rem;
     border-radius: $borderRadiusDefault;
     box-shadow: $boxShadowDefault;
 
