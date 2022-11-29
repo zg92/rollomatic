@@ -14,6 +14,8 @@ export const ShotMenuContextProvider = ({ children }) => {
 
   const [openSave, setOpenSave] = useState("");
 
+  const [completedHeader, setCompletedHeader] = useState("");
+
   const [shotsList, setShotsList] = useState([
     {
       position: 0,
@@ -37,6 +39,8 @@ export const ShotMenuContextProvider = ({ children }) => {
     setRollSettings,
     openSave,
     setOpenSave,
+    completedHeader,
+    setCompletedHeader,
   };
 
   return (

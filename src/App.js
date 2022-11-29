@@ -17,8 +17,6 @@ function App() {
   const { openShotSettingMenu } = useContext(ShotMenuContext);
   const { openPopUp, blur } = useContext(PopUpContext);
 
-  console.log(blur);
-
   return (
     <div className="App">
       <Navbar />
@@ -55,7 +53,6 @@ function App() {
         <PopUp type={<SignUpPopup />} title="Signup For an Account" />
       ) : null}
     </div>
-    // </div>
   );
 }
 

@@ -12,6 +12,11 @@ export const Warning = ({ warningType }) => {
     noPasswordMatch: "Your passwords did not match",
     selectNewOption: "You must select an option for your new roll",
     noSaves: "You have no rolls saved",
+    headerIncomplete: "Cannot save without required information below",
+    invalidEmail: "There was an issue with the provided email",
+    invalidPassword: "There was an issue with the provided password",
+    weakPassword: "Your password must be at least 6 characters",
+    accoutExists: "The account you signed up already exists",
   };
 
   return (

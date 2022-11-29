@@ -8,7 +8,8 @@ import { UserContext } from "../../context/user.context";
 import Logo from "../assets/logo/logo";
 
 const Navbar = () => {
-  const { rollSettings, setRollSettings } = useContext(ShotMenuContext);
+  const { rollSettings, setRollSettings, setCompletedHeader } =
+    useContext(ShotMenuContext);
   const { openPopUp, setOpenPopUp } = useContext(PopUpContext);
   const { user } = useContext(UserContext);
 
@@ -26,16 +27,10 @@ const Navbar = () => {
 
   const saveCheck = () => {
     if (rollSettings["film-stock"] === "" || rollSettings["iso"] === "") {
-      setRollSettings({
-        ...rollSettings,
-        rollSettingsInput: {
-          ...rollSettings["rollSettingsInput"],
-          "film-stock": "Data is missing!",
-          iso: "Data is missing!",
-        },
-      });
+      setCompletedHeader(false);
     } else {
       activatePopup("save");
+      setCompletedHeader(true);
     }
   };
 

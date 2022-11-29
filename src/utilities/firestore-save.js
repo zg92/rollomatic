@@ -36,6 +36,7 @@ export const saveRoll = async (user, rollName, rollSettings, shotsList) => {
     await setDoc(doc(userDocRef, "rolls", rollName), structuredData);
   } catch (e) {
     console.warning("Error adding document", e);
+    return e;
   }
 };
 

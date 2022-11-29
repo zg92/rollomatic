@@ -2,7 +2,7 @@
 
 .header-wrapper {
     background: $backgroundColorBlank;
-    @include flex(row, space-evenly, true);
+    @include flex(column, space-evenly, true);
     border: $borderDefault $accentColor;
     min-height: 8rem;
     border-radius: $borderRadiusDefault;

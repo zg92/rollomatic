@@ -17,6 +17,20 @@ const LoginPopup = () => {
   const { user } = useContext(UserContext);
 
   const login = async () => {
+    try {
+      await loginUser(usernameInput, passwordInput);
+    } catch (e) {
+      if (e.code === "auth/invalid-email") {
+        setWarningMessage("invalidEmail");
+      }
+      if (e.code === "auth/wrong-password") {
+        setWarningMessage("invalidPassword");
+      }
+    }
+    setPasswordInput("");
+  };
+
+  const loginChecks = async () => {
     if (usernameInput === "") {
       setWarningMessage("noUsername");
     }
@@ -26,8 +40,7 @@ const LoginPopup = () => {
     if (usernameInput === "" && passwordInput === "") {
       setWarningMessage("noUsernameOrPassword");
     } else {
-      loginUser(usernameInput, passwordInput);
-      setPasswordInput("");
+      login();
     }
   };
 
@@ -57,7 +70,7 @@ const LoginPopup = () => {
           onChange={(e) => changeHandler(e, setPasswordInput)}
         />
       </div>
-      <SubmitButton text="Login" onClick={() => login()} />
+      <SubmitButton text="Login" onClick={() => loginChecks()} />
 
       <div className="bottom-prompt">
         Don't have an account?{" "}

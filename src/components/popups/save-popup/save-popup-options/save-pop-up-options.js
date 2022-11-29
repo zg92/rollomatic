@@ -12,8 +12,6 @@ const SavePopUpOptions = ({
 }) => {
   const { openSave } = useContext(ShotMenuContext);
 
-  //   determines which options to display to a user depending on if they have a saved roll open
-
   return (
     <div>
       {openSave !== "" ? (

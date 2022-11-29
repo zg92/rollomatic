@@ -17,7 +17,26 @@ const SignUpPopup = () => {
   const { setOpenPopUp } = useContext(PopUpContext);
   const { user } = useContext(UserContext);
 
-  const submitCreateUser = async () => {
+  const signUp = async () => {
+    try {
+      await createUser(usernameInput, passwordInput);
+    } catch (e) {
+      console.log(e);
+      if (e.code === "auth/invalid-email") {
+        setWarningMessage("invalidEmail");
+      }
+      if (e.code === "auth/weak-password") {
+        setWarningMessage("weakPassword");
+      }
+      if (e.code === "auth/email-already-in-use") {
+        setWarningMessage("weakPassword");
+      }
+    }
+    setPasswordInput("");
+    setPasswordInputConfirm("");
+  };
+
+  const createUserChecks = async () => {
     if (passwordInput === "") {
       setWarningMessage("noPassword");
     }
@@ -27,13 +46,7 @@ const SignUpPopup = () => {
     if (passwordInput !== passwordInputConfirm) {
       setWarningMessage("noPasswordMatch");
     } else {
-      try {
-        await createUser(usernameInput, passwordInput);
-      } catch (e) {
-        console.log(e);
-      }
-      setPasswordInput("");
-      setPasswordInputConfirm("");
+      signUp();
     }
   };
 
@@ -69,7 +82,7 @@ const SignUpPopup = () => {
           onChange={(e) => changeHandler(e, setPasswordInputConfirm)}
         />
       </div>
-      <SubmitButton text="Sign Up" onClick={() => submitCreateUser()} />
+      <SubmitButton text="Sign Up" onClick={() => createUserChecks()} />
 
       <div className="bottom-prompt">
         Already Have an Account?

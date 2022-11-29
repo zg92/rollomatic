@@ -16,41 +16,29 @@ const ShotMenuHeaderInput = ({ category }) => {
     });
   };
 
-  // This function makes it easier to populate data if a user tries to save
-  // and gets the 'Data is Missing!' warning by clearing the input console
-  const clearData = () => {
-    if (rollSettings["rollSettingsInput"][category] === "Data is missing!") {
-      setRollSettings({
-        ...rollSettings,
-        rollSettingsInput: {
-          ...rollSettings["rollSettingsInput"],
-          [category]: "",
-        },
-      });
-    }
-  };
-
   return (
     <div className="input-wrapper">
       <div className="category-title">{category}:</div>
-
       <div className="input-category-input">
+        <input
+          type="text"
+          value={rollSettings["rollSettingsInput"][category]}
+          onChange={(e) => handleChanges(e)}
+          className="input-console"
+          style={
+            rollSettings[`completed-${category}`] === true
+              ? {
+                  background: "grey",
+                  border: "black solid 2px",
+                  pointerEvents: "none",
+                }
+              : { background: "white" }
+          }
+        />
         {rollSettings[`completed-${category}`] === false ? (
-          <>
-            <input
-              type="text"
-              value={rollSettings["rollSettingsInput"][category]}
-              onChange={(e) => handleChanges(e)}
-              onClick={clearData}
-              className="input-console"
-            />
-            <Button buttonType="checkRollData" category={category} />
-          </>
+          <Button buttonType="checkRollData" category={category} />
         ) : (
-          <>
-            <div className="input-current">{` ${rollSettings[category]}`}</div>
-            <Button buttonType="editRollData" category={category} />
-          </>
+          <Button buttonType="editRollData" category={category} />
         )}
       </div>
     </div>

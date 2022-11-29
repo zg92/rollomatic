@@ -7,17 +7,23 @@ import "./shot-delete.scss";
 
 const ShotDelete = ({ rollName, user }) => {
   const { setOpenPopUp } = useContext(PopUpContext);
+  const { openSave, setOpenSave } = useContext(ShotMenuContext);
 
-  const removeRoll = async (rollName, user) => {
+  // Checks if currently open roll is the same as the one being deleted and prevents a user from updating an already deleted roll
+  const checkOpenRoll = () => {
+    if (openSave === rollName) {
+      setOpenSave("");
+    }
+  };
+
+  const removeRoll = async () => {
     await deleteRoll(rollName, user);
+    checkOpenRoll();
     setOpenPopUp("open");
   };
 
   return (
-    <div
-      className="button-icon delete-button"
-      onClick={() => removeRoll(rollName, user)}
-    >
+    <div className="button-icon delete-button" onClick={removeRoll}>
       <HiTrash />
     </div>
   );

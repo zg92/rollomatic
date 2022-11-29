@@ -1,7 +1,7 @@
 @import '../../../sassStyles/main.scss';
 
 .popup-wrapper {
-    position: absolute;
+    position: fixed;
     margin: auto;
     background: white;
     width: 60%;
