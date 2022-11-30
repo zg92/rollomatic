@@ -24,11 +24,11 @@
 .line-button-wrapper {
     width: 20%;
     @include flex(row, center, true);
+
 }
 
 .add-remove-menu {
-    @include flex(row, space-evenly, false);
-    width: 5rem;
+    width: 60%;
 }
 
 @media screen and (min-width: 660px) {

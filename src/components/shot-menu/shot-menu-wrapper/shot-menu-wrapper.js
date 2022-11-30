@@ -16,12 +16,15 @@ const ShotMenuWrapper = () => {
           </div>
           <div className="line-button-wrapper">
             {lineData["position"] === shotsList.length - 1 ? (
-              <div className="add-remove-menu">
+              // first line will only have add button
+              lineData["position"] === 0 ? (
                 <Button buttonType="addShot" />
-                {lineData["position"] !== 0 ? (
+              ) : (
+                <div className="add-remove-menu">
+                  <Button buttonType="addShot" />
                   <Button buttonType="removeShot" />
-                ) : null}
-              </div>
+                </div>
+              )
             ) : (
               <Button buttonType="editShot" position={lineData["position"]} />
             )}
