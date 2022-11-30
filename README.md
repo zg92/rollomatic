@@ -6,7 +6,7 @@ Roll-o-Matic is a mobile-first open source web app tool for film photographers. 
 
 ## How to set up
 
-Roll-o-Matic is powered by React and Sass and utilizes Firebase for data storage and user authorization. Aside from the source code and packages used to build Roll-o-Matic, the only additional step to run it is to set up (Firebase credentials)[https://firebase.google.com/]. Once credentials have been created, create a new `.js` file in the `src\utilities\` file called `admin-firebase.js` and create an exportable variable with your Firebase information:
+Roll-o-Matic is powered by React and Sass and utilizes Firebase for data storage and user authorization. Aside from the source code and packages used to build Roll-o-Matic, the only additional step to run it is to set up [Firebase credentials](https://firebase.google.com/). Once credentials have been created, create a new `.js` file in the `src\utilities\` file called `admin-firebase.js` and create an exportable variable with your Firebase information:
 
 ```javascript
 export const firebaseConfig = {
