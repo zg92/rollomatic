@@ -1,23 +1,24 @@
 @import '../../../sassStyles/main.scss';
 
 .dropdown-wrapper {
-    @include flex(row, space-around, false);
+    @include flex(row, space-evenly, false);
+    width: 50%;
 }
 
 .dropdown-group {
     @include flex(row, left, false);
     margin: .5rem;
-    width: 70%;
 }
 
 .dropdown-type {
     font-weight: bolder;
-    width: 80%;
+    width: fit-content;
     text-transform: capitalize;
 }
 
 .dropdown-result {
     margin-left: .2rem;
+    width: fit-content;
     cursor: pointer;
 }
 

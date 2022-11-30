@@ -1,19 +1,19 @@
 @import '../../../sassStyles/main.scss';
 
 .input-wrapper {
-    width: 22rem;
+    width: 95vw;
     height: 2.5rem;
     @include flex(row, space-evenly, true);
 }
 
 .category-title {
     font-weight: bolder;
-    width: 30%;
+    width: 20%;
     text-transform: uppercase;
 }
 
 .input-category-input {
-    width: 60%;
+    width: 70%;
     height: 1rem;
     @include flex(row, space-around, true);
 }

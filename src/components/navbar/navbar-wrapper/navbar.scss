@@ -1,4 +1,4 @@
-@import '../../sassStyles/main';
+@import '../../../sassStyles/main.scss';
 
 .menu-bar {
     width: 100%;
@@ -13,12 +13,12 @@
 }
 
 .navbar-logo-wrapper {
-    @include flex(row, center, true);
-    width: 25%;
+    @include flex(row, left, true);
+    width: 20%;
 }
 
 .navbar-links {
-    width: 75%;
+    width: 70%;
     @include flex(row, space-around, false);
 
 }
@@ -31,4 +31,20 @@
 
 .navbar-link:hover {
     color: $accentColor;
+}
+
+@media screen and (min-width:420px) {
+
+    .navbar-links {
+        width: 70%
+    }
+
+    .navbar-logo-wrapper {
+        width: 30%;
+        justify-content: left;
+    }
+
+    .navbar-link {
+        font-size: 1.25rem;
+    }
 }

@@ -3,7 +3,7 @@
 .menu-line-wrapper {
     @include flex(column, center, false);
     margin-top: 1rem;
-    width: 23rem;
+    width: 95vw;
 }
 
 .line-data-wrapper {
@@ -29,4 +29,18 @@
 .add-remove-menu {
     @include flex(row, space-evenly, false);
     width: 5rem;
+}
+
+@media screen and (min-width: 660px) {
+    .shot-menu-wrapper {
+        width: 85%;
+    }
+
+    .line-button-wrapper {
+        width: 15%;
+    }
+
+    .add-remove-menu {
+        @include flex(row, space-between, false);
+    }
 }

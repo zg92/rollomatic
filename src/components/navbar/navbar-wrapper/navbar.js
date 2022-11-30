@@ -1,15 +1,14 @@
 import "./navbar.scss";
 
 import { useContext } from "react";
-import { ShotMenuContext } from "../../context/shot-menu.context";
-import { PopUpContext } from "../../context/popup-context";
-import { logoutUser } from "../../utilities/firestore-auth";
-import { UserContext } from "../../context/user.context";
-import Logo from "../assets/logo/logo";
+import Logo from "../navbar-logo/logo";
+import { UserContext } from "../../../context/user.context";
+import { PopUpContext } from "../../../context/popup-context";
+import { logoutUser } from "../../../utilities/firestore-auth";
+import { ShotMenuContext } from "../../../context/shot-menu.context";
 
 const Navbar = () => {
-  const { rollSettings, setRollSettings, setCompletedHeader } =
-    useContext(ShotMenuContext);
+  const { rollSettings, setCompletedHeader } = useContext(ShotMenuContext);
   const { openPopUp, setOpenPopUp } = useContext(PopUpContext);
   const { user } = useContext(UserContext);
 
@@ -41,28 +40,28 @@ const Navbar = () => {
 
   return (
     <nav className="menu-bar">
-      <div className="navbar-logo-wrapper">
+      <p className="navbar-logo-wrapper">
         <Logo />
-      </div>
+      </p>
       <div className="navbar-links">
-        <h3 className="navbar-link" onClick={() => activatePopup("new")}>
+        <p className="navbar-link" onClick={() => activatePopup("new")}>
           New
-        </h3>
+        </p>
         {user === null ? (
-          <h3 className="navbar-link" onClick={() => activatePopup("login")}>
+          <p className="navbar-link" onClick={() => activatePopup("login")}>
             Login
-          </h3>
+          </p>
         ) : (
           <>
-            <h3 className="navbar-link" onClick={saveCheck}>
+            <p className="navbar-link" onClick={saveCheck}>
               Save
-            </h3>
-            <h3 className="navbar-link" onClick={() => activatePopup("open")}>
+            </p>
+            <p className="navbar-link" onClick={() => activatePopup("open")}>
               Open
-            </h3>
-            <h3 className="navbar-link" onClick={logout}>
+            </p>
+            <p className="navbar-link" onClick={logout}>
               Logout
-            </h3>
+            </p>
           </>
         )}
       </div>

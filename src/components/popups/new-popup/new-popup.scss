@@ -1,7 +1,9 @@
 @import '../../../sassStyles/main.scss';
 
 .new-content {
-    height: 40%;
+    height: 50%;
+    width: fit-content;
+    @include flex(column, space-evenly, true);
 }
 
 .new-input-row {
