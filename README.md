@@ -1,6 +1,5 @@
 # Roll-o-Matic Readme
-
-## A film photographer's mobile companion
+A film photographer's mobile companion
 
 ### Introduction
 
