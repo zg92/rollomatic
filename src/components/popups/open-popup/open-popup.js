@@ -44,7 +44,7 @@ const OpenPopup = () => {
       "completed-iso": true,
       rollSettingsInput: {
         iso: rollData[index]["metaData"].iso,
-        ["film-stock"]: rollData[index]["metaData"].filmStock,
+        "film-stock": rollData[index]["metaData"].filmStock,
       },
     });
     setOpenPopUp("");
@@ -63,7 +63,11 @@ const OpenPopup = () => {
             >
               <div className="saved-roll-line-item-data">
                 <b>Name:</b>{" "}
-                <i className="metadata-name">{i.metaData.rollName}</i>
+                <i className="metadata-name">
+                  {i.metaData.rollName.length > 11
+                    ? i.metaData.rollName.substring(0, 8) + "..."
+                    : i.metaData.rollName}
+                </i>
               </div>
               <div className="saved-roll-line-item-data">
                 <b>Date:</b> <i className="metadata-name">{i.metaData.date}</i>

@@ -70,8 +70,10 @@ const NewPopup = () => {
         }
       )
     );
-    // set first item as unlocked to allow editing
-    newShotList[0]["lock"] = false;
+    // set first item as unlocked to allow editing if a list is created with value 1
+    if (shotCount === 1) {
+      newShotList[0]["lock"] = false;
+    }
 
     await setShotsList(newShotList);
     clearHeader();

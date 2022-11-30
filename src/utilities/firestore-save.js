@@ -74,7 +74,6 @@ export const updateRoll = async (user, rollName, rollSettings, shotsList) => {
   } catch (e) {
     console.log("Error updating document", e);
   }
-  console.log("done!");
 };
 
 export const deleteRoll = async (rollName, user) => {

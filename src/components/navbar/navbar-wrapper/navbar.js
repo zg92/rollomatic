@@ -8,7 +8,8 @@ import { logoutUser } from "../../../utilities/firestore-auth";
 import { ShotMenuContext } from "../../../context/shot-menu.context";
 
 const Navbar = () => {
-  const { rollSettings, setCompletedHeader } = useContext(ShotMenuContext);
+  const { rollSettings, setCompletedHeader, setShotsList } =
+    useContext(ShotMenuContext);
   const { openPopUp, setOpenPopUp } = useContext(PopUpContext);
   const { user } = useContext(UserContext);
 
@@ -35,6 +36,14 @@ const Navbar = () => {
 
   const logout = () => {
     logoutUser();
+    setShotsList([
+      {
+        position: 0,
+        aperture: null,
+        shutter: null,
+        lock: false,
+      },
+    ]);
     setOpenPopUp("");
   };
 

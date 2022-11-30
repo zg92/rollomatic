@@ -18,6 +18,7 @@ export const Warning = ({ warningType }) => {
     weakPassword: "Your password must be at least 6 characters",
     accoutExists: "The account you signed up already exists",
     nonNumberEntered: "A non-integer was entered",
+    noUserFound: "Account does not exist",
   };
 
   return (

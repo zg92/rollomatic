@@ -21,7 +21,6 @@ const SignUpPopup = () => {
     try {
       await createUser(usernameInput, passwordInput);
     } catch (e) {
-      console.log(e);
       if (e.code === "auth/invalid-email") {
         setWarningMessage("invalidEmail");
       }
@@ -29,7 +28,7 @@ const SignUpPopup = () => {
         setWarningMessage("weakPassword");
       }
       if (e.code === "auth/email-already-in-use") {
-        setWarningMessage("weakPassword");
+        setWarningMessage("accoutExists");
       }
     }
     setPasswordInput("");

@@ -26,6 +26,9 @@ const LoginPopup = () => {
       if (e.code === "auth/wrong-password") {
         setWarningMessage("invalidPassword");
       }
+      if (e.code === "auth/user-not-found") {
+        setWarningMessage("noUserFound");
+      }
     }
     setPasswordInput("");
   };
