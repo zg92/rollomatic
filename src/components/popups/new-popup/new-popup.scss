@@ -2,14 +2,15 @@
 
 .new-content {
     height: 50%;
-    width: max-content;
+    width: 18rem;
     @include flex(column, space-evenly, true);
+
 }
 
 .new-input-row {
     @include flex(row, left, false);
-    width: 95%;
-
+    width: 100%;
+    margin-left: 2rem;
 }
 
 .new-roll-radio {
@@ -19,5 +20,9 @@
 
 .new-input {
     width: 2rem;
-    margin-left: 10%;
+    margin-left: 5%;
+}
+
+.new-roll-label {
+    margin-left: .5rem;
 }

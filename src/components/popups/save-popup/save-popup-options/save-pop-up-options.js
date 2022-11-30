@@ -20,16 +20,18 @@ const SavePopUpOptions = ({
             <RadioButton
               radioName={"save-roll"}
               radioValue={"update"}
-              label={"Update saved roll"}
+              label={"Update currently open roll"}
               setter={setRadioSelection}
+              labelClass={"save-roll-label"}
             />
           </div>
           <div className="save-roll-option-line">
             <RadioButton
               radioName={"save-roll"}
               radioValue={"new"}
-              label={"Save as new roll (enter a name)"}
+              label={"Save as new roll (enter a name):"}
               setter={setRadioSelection}
+              labelClass={"save-roll-label"}
             />
           </div>
           <input

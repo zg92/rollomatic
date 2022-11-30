@@ -90,7 +90,8 @@ const NewPopup = () => {
           radioValue={"blank"}
           setter={setRadioSelection}
           className={"new-roll-radio"}
-          label={"Start a blank roll"}
+          label={"Start blank roll"}
+          labelClass={"new-roll-label"}
         />
       </div>
       <div className="roll-options-row new-input-row">
@@ -100,7 +101,8 @@ const NewPopup = () => {
           input={"Update saved roll"}
           setter={setRadioSelection}
           className={"new-roll-radio"}
-          label={"Start a roll with shot count"}
+          label={"Start roll with shot count:"}
+          labelClass={"new-roll-label"}
         />
         <input
           className="new-input"

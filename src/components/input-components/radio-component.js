@@ -4,6 +4,7 @@ export const RadioButton = ({
   label,
   className,
   setter,
+  labelClass,
 }) => {
   const changeHandler = (e, setter) => {
     setter(e.target.value);
@@ -21,7 +22,9 @@ export const RadioButton = ({
         }}
       />
 
-      <label htmlFor={radioValue}>{label}</label>
+      <label htmlFor={radioValue} className={labelClass}>
+        {label}
+      </label>
     </>
   );
 };

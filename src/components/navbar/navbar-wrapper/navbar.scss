@@ -20,6 +20,7 @@
 .navbar-links {
     width: 70%;
     @include flex(row, space-around, false);
+    margin-right: 10px;
 
 }
 
