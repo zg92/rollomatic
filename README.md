@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Roll-o-Matic Readme
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## A film photographer's mobile companion
 
-## Available Scripts
+### Introduction
 
-In the project directory, you can run:
+Roll-o-Matic is a mobile-first open source web app tool for film photographers. Most film photographers note the settings they used for a roll of film through keeping notes on paper or on their phones. These notes can be easily lost or corrupted, creating the risk of losing vital information. Roll-o-Matic solves for this potential headache by enabling photographers to track their shot settings on a roll of film as they shoot, save rolls, and access past rolls.
 
-### `npm start`
+### How to set up
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Roll-o-Matic is powered by React and Sass and utilizes Firebase for data storage and user authorization. Aside from the source code and packages used to build Roll-o-Matic, the only additional step to run it is to set up (Firebase credentials)[https://firebase.google.com/]. Once credentials have been created, create a new `.js` file in the `src\utilities\` file called `admin-firebase.js` and create an exportable variable with your Firebase information:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```javascript
+export const firebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: "",
+};
+```
 
-### `npm test`
+Once you have set up the Firebase credential file, use `npm start` to start your local server and use the application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Features
 
-### `npm run build`
+Roll-o-Matic currently offers the following functionality:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Shot Data Management:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Create new film rolls of flexible or set length
+2. Record film-stock and ISO data
+3. Record shot level shutterspeed and aperture
+4. Protect data against accidental manipulation through data-locking functionality
+5. Add or remove new shots on the film roll
+6. Save roll data with unique name
+7. Open historical saved roll data
+8. Modify and update existing rolls
+9. Delete past rolls' data
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Account Management:
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Account creation
+2. Login capabilities
+3. Logout capabilities
