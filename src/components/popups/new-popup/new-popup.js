@@ -26,10 +26,13 @@ const NewPopup = () => {
       setWarningMessage("customRollLessThanOne");
       return;
     }
+    if (shotCount !== Number) {
+      setShotCount(1);
+      setupRoll();
+    }
 
     if (radioSelection === "set") {
       setupRoll();
-      setOpenSave("");
     }
   };
 
@@ -67,9 +70,13 @@ const NewPopup = () => {
         }
       )
     );
+    // set first item as unlocked to allow editing
+    newShotList[0]["lock"] = false;
+
     await setShotsList(newShotList);
     clearHeader();
     setOpenPopUp("");
+    setOpenSave("");
   };
 
   return (

@@ -2,21 +2,19 @@
 
 .new-content {
     height: 50%;
-    width: fit-content;
+    width: max-content;
     @include flex(column, space-evenly, true);
 }
 
 .new-input-row {
     @include flex(row, left, false);
-    width: 90%;
+    width: 95%;
+
 }
 
 .new-roll-radio {
     cursor: pointer;
-}
-
-.new-roll-label {
-    margin-left: 5%;
+    padding: .5rem;
 }
 
 .new-input {

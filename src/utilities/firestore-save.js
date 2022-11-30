@@ -7,6 +7,7 @@ import {
   getDocs,
   deleteDoc,
   updateDoc,
+  getDoc,
 } from "firebase/firestore";
 import { firebaseConfig } from "./admin-firebase";
 
@@ -35,7 +36,7 @@ export const saveRoll = async (user, rollName, rollSettings, shotsList) => {
   try {
     await setDoc(doc(userDocRef, "rolls", rollName), structuredData);
   } catch (e) {
-    console.warning("Error adding document", e);
+    console.log("Error adding document", e);
     return e;
   }
 };
@@ -45,13 +46,21 @@ export const getRolls = async (user) => {
   try {
     return await getDocs(userDocRef);
   } catch (e) {
-    console.warning("Error getting documents", e);
+    console.log("Error getting documents", e);
+  }
+};
+
+export const getRoll = async (user, rollName) => {
+  const userDocRef = doc(db, "users", user, "rolls", rollName);
+  try {
+    return await getDoc(userDocRef);
+  } catch (e) {
+    console.log("Error getting documents", e);
   }
 };
 
 export const updateRoll = async (user, rollName, rollSettings, shotsList) => {
   const userDocRef = doc(db, "users", user, "rolls", rollName);
-  console.log(userDocRef);
   try {
     await updateDoc(userDocRef, {
       metaData: {

@@ -26,8 +26,13 @@ function App() {
           blur === true
             ? {
                 backdropFilter: "blur(3px)",
+                webkitBackdropFilter: "blur(3px)",
               }
-            : { backdropFilter: "blur(0px)", zIndex: "-1" }
+            : {
+                backdropFilter: "blur(0px)",
+                webkitBackdropFilter: "blur(0px)",
+                zIndex: "-1",
+              }
         }
       />
       <div className="app-wrapper">

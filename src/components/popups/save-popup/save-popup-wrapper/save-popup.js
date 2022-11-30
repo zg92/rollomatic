@@ -12,7 +12,8 @@ const SavePopup = () => {
   const [rollName, setRollName] = useState("");
   const [radioSelection, setRadioSelection] = useState();
   const [warningMessage, setWarningMessage] = useState();
-  const { shotsList, rollSettings, openSave } = useContext(ShotMenuContext);
+  const { shotsList, rollSettings, openSave, setOpenSave } =
+    useContext(ShotMenuContext);
   const { setOpenPopUp } = useContext(PopUpContext);
   const { user } = useContext(UserContext);
 
@@ -21,6 +22,7 @@ const SavePopup = () => {
       setWarningMessage("noRollname");
     } else {
       saveRollOption();
+      setOpenSave(rollName);
       setOpenPopUp("");
     }
   };
